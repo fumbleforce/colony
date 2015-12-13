@@ -25,13 +25,13 @@ Market = React.createClass({
     return <div>
       
       <TabMenu>
-        <Tab tab="marketplace">Marketplace</Tab>
+        <Tab tab="marketplace" active={true}>Marketplace</Tab>
         <Tab tab="caravans">Caravans</Tab>
         <Tab tab="trading">Trading</Tab>
         <Tab tab="connected-markets">Connected markets</Tab>
       </TabMenu>
       
-      <TabContent tab="marketplace">
+      <TabContent tab="marketplace" active={true}>
         <Marketplace />
       </TabContent>
       

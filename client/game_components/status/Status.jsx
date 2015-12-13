@@ -22,10 +22,19 @@ Status = React.createClass({
   },
   
   render() {
-    return <div className="ui top visible sidebar menu">
-      <div className="item">
+    return <Menu className="orange inverted attached">
+      <MenuItem>
+        Mayor Bob
+      </MenuItem>
+      <MenuItem>
+        MyTown
+      </MenuItem>
+      <MenuItem>
+        Town Size 1
+      </MenuItem>
+      <MenuItem>
         {Utility.money(100000)}
-      </div>
-    </div>;
+      </MenuItem>
+    </Menu>;
   }
 });

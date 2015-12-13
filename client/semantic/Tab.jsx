@@ -3,12 +3,8 @@ Tab = React.createClass({
     tab: React.PropTypes.string,
   },
   
-  componentDidMount() {
-      
-  },
-  
   render() {
-    return <a className="item" data-tab={this.props.tab}>
+    return <a className={(this.props.active?"active ":"")+"item"} data-tab={this.props.tab}>
       {this.props.children}
     </a>;
   }
@@ -20,12 +16,8 @@ TabContent = React.createClass({
     tab: React.PropTypes.string,
   },
   
-  componentDidMount() {
-      
-  },
-  
   render() {
-    return <div className="ui tab bottom attached segment" data-tab={this.props.tab}>
+    return <div className={(this.props.active?"active ":"")+"ui tab bottom attached segment"} data-tab={this.props.tab}>
       {this.props.children}
     </div>;
   }

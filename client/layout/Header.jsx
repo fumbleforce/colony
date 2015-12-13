@@ -1,27 +1,8 @@
 Header = React.createClass({
-  mixins: [ReactMeteorData],
-  
-  propTypes: {
-
-  },
-  
-  getMeteorData() {
-    return {
-      
-    }
-  },
-  
-  getInitialState() {
-    return {
-
-    }
-  },
-  
-  componentDidMount() {
-      
-  },
-  
   render() {
-    return <Status />;
+    return <div className="ui top attached visible sidebar" style={{"overflow": "hidden"}}>
+      <Status />
+      <Navigation />
+    </div>
   }
 });

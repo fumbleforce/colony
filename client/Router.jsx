@@ -69,7 +69,7 @@ FlowRouter.route("/market", {
 FlowRouter.route("/treasury", {
   action () {
     ReactLayout.render(MainLayout, {
-      content: <Town />
+      content: <Treasury />
     });
   }
 });
