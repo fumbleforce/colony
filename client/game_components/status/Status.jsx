@@ -22,7 +22,7 @@ Status = React.createClass({
   },
   
   render() {
-    return <Menu className="orange inverted attached">
+    return <Menu className="attached">
       <MenuItem>
         Mayor Bob
       </MenuItem>

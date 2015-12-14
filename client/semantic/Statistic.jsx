@@ -28,6 +28,7 @@ Statistics = React.createClass({
     let props = this.props;
     let classes = "ui ";
     
+    classes += props.width ? ` ${props.width} `: "";
     classes += props.size ? ` ${props.size} `: "";
     classes += props.className ? ` ${props.className} `: "";
     classes += " statistics";

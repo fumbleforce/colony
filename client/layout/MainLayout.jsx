@@ -3,7 +3,7 @@ MainLayout = React.createClass({
     return <div>
       <Header />
       
-      <main>
+      <main className="ui container">
         {this.props.content}
       </main>
       
