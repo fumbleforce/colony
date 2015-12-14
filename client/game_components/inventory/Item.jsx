@@ -1,4 +1,4 @@
-Relations = React.createClass({
+Item = React.createClass({
   mixins: [ReactMeteorData],
   
   propTypes: {
@@ -23,7 +23,9 @@ Relations = React.createClass({
   
   render() {
     return <div>
-    Hallo
+    	// Get icon
+      {this.props.name}
+      Quantity:{this.props.quantity}
     </div>;
   }
 });
