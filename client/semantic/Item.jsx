@@ -1,62 +1,52 @@
 Item = React.createClass({
   classes () {
     let props = this.props;
-    let classes = "ui item ";
+    let classes = "ui ";
     
     classes += props.width ? ` ${props.width} wide `: "";
+    classes += props.className ? ` ${props.className} `: "";
+    classes += " item";
     return classes;
   },
   
-  render() {
-    let props = this.props;
-    
-    return <div className={this.classes()}>
-      {props.image ? this.renderImage() : ""}
-    
-      {this.props.children}
-    </div>;
-  }
-});
-
-ItemContent = React.createClass({
-  classes () {
-    let props = this.props;
-    let classes = "content";
-    return classes;
+  renderIcon() {
+    return <div className="image">
+      <Icon icon={this.props.icon} size="large" />
+    </div>
   },
   
   renderMeta () {
-    return <div class="meta">{this.props.meta}</div>
+    return <div className="meta">{this.props.meta}</div>
   },
   
   renderHeader () {
-    return <a class="header">{this.props.header}</a>
+    return <a className="header">{this.props.header}</a>
+  },
+  
+  renderDescription () {
+    return <div className="description">
+      {this.props.description}
+    </div>
+  },
+  
+  renderExtra () {
+    return <div className="extra">
+      {this.props.extra}
+    </div>
   },
   
   render() {
     let props = this.props;
     
     return <div className={this.classes()}>
-      {props.header ? this.renderHeader() : ""}
-      {props.meta ? this.renderMeta() : ""}
+      {props.icon ? this.renderIcon() : ""}
       
-      <div class="description">
-        {this.props.children}
+      <div className="content">
+        {props.header ? this.renderHeader() : ""}
+        {props.meta ? this.renderMeta() : ""}
+        {props.description ? this.renderDescription() : ""}
+        {props.extra ? this.renderExtra() : ""}
       </div>
-    </div>;
-  }
-});
-
-ItemExtra = React.createClass({
-  classes () {
-    let props = this.props;
-    let classes = "extra";
-    return classes;
-  },
-  
-  render() {
-    return <div className={this.classes()}>
-      {this.props.children}
     </div>;
   }
 });
@@ -65,7 +55,9 @@ ItemExtra = React.createClass({
 Items = React.createClass({
   classes () {
     let props = this.props;
-    let classes = "ui items ";
+    let classes = "ui ";
+    classes += props.className ? ` ${props.className} `: "";
+    classes += " items";
     return classes;
   },
   

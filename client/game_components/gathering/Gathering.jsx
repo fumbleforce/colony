@@ -24,68 +24,22 @@ Gathering = React.createClass({
   render() {
     return <div>
     
-      <Items>
-        <Item>
-          <ItemContent header="Fields" meta="3 plots" />
-          <ItemExtra>
-            <Button>Expand</Button>
-          </ItemExtra>
-        </Item>
-      </Items>
+      <Segment>
+        <h2 className="ui header">Plots</h2>
+        
+        <Statistics>
+          <Statistic value="3 / 10" label="plots used" />
+          <Statistic value="289 / 300" label="settlers employed" />
+        </Statistics>
+      </Segment>
+    
+      <GatheringFacilities>
+        <GatheringFacility icon="spade" name="Fields" plots={3} rate={4} resource="grain" />
+        <GatheringFacility icon="wood-axe" name="Lumber camps" plots={1} rate={4} resource="log" />
+        <GatheringFacility icon="meat-cleaver" name="Pastures" plots={5} rate={3} resource="meat" />
+        <GatheringFacility icon="mining" name="Quarry" plots={0} rate={9} resource="stone" />
+      </GatheringFacilities>
       
-      <Grid columns="two">
-        <Row>
-          <Column>
-            <Segment color="orange">
-              <h3>Fields</h3>
-              
-              <p>Generates 23 grain / day</p>
-            </Segment>
-          </Column>
-          <Column>
-          
-          </Column>
-        </Row>
-        
-        <Row>
-          <Column>
-            <Segment color="brown">
-              <h3>Lumber camps</h3>
-              
-              <p>Generates 23 logs / day</p>
-            </Segment>
-          </Column>
-          <Column>
-          
-          </Column>
-        </Row>
-        
-        <Row>
-          <Column>
-            <Segment color="pink">
-              <h3>Pastures</h3>
-              
-              <p>Generates 32 meat / day</p>
-            </Segment>
-          </Column>
-          <Column>
-          
-          </Column>
-        </Row>
-        
-        <Row>
-          <Column>
-            <Segment color="grey">
-              <h3>Quarry</h3>
-              
-              <p>Generates 3 stones / day</p>
-            </Segment>
-          </Column>
-          <Column>
-          
-          </Column>
-        </Row>
-      </Grid>
     </div>;
   }
 });
