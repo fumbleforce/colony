@@ -1,22 +1,17 @@
-Card = React.createClass({
-  
+ListItem = React.createClass({
   classes () {
     let props = this.props;
-    let classes = "ui ";
+    let classes = "";
     
     classes += props.className ? ` ${props.className} `: "";
-    classes += " card";
+    classes += " item";
     return classes;
   },
   
   renderIcon() {
     return <div className="image">
-      <Icon icon={this.props.icon} size="large" />
+      <Icon icon={this.props.icon} size="tiny" />
     </div>
-  },
-  
-  renderMeta () {
-    return <div className="meta">{this.props.meta}</div>
   },
   
   renderHeader () {
@@ -29,9 +24,9 @@ Card = React.createClass({
     </div>
   },
   
-  renderExtra () {
-    return <div className="extra content">
-      {this.props.extra}
+  renderRight () {
+    return <div className="right floated content">
+      {this.props.right}
     </div>
   },
   
@@ -41,24 +36,24 @@ Card = React.createClass({
     return <div className={this.classes()}>
       {props.icon ? this.renderIcon() : ""}
       
+      {props.right ? this.renderRight() : ""}
+      
       <div className="content">
         {props.header ? this.renderHeader() : ""}
-        {props.meta ? this.renderMeta() : ""}
         {props.description ? this.renderDescription() : ""}
+        {props.children}
       </div>
-      
-      {props.extra ? this.renderExtra() : ""}
     </div>;
   }
 });
 
-Cards = React.createClass({
-  
+
+List = React.createClass({
   classes () {
     let props = this.props;
-    let classes = "ui cards ";
-    
+    let classes = "ui ";
     classes += props.className ? ` ${props.className} `: "";
+    classes += " list";
     return classes;
   },
   
