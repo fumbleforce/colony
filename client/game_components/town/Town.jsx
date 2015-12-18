@@ -26,7 +26,7 @@ Town = React.createClass({
       
       <h1 className="ui centered header">Town</h1>
       
-      <Grid width="two">
+      <Grid className="two column">
         <Column>
           <TownStatus />
         </Column>

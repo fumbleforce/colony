@@ -1,3 +1,4 @@
+/*
 ListItem = React.createClass({
   classes () {
     let props = this.props;
@@ -33,7 +34,7 @@ ListItem = React.createClass({
   render() {
     let props = this.props;
     
-    return <div className={this.classes()}>
+    return <div className={this.getClasses("")}>
       {props.icon ? this.renderIcon() : ""}
       
       {props.right ? this.renderRight() : ""}
@@ -46,19 +47,13 @@ ListItem = React.createClass({
     </div>;
   }
 });
-
+*/
 
 List = React.createClass({
-  classes () {
-    let props = this.props;
-    let classes = "ui ";
-    classes += props.className ? ` ${props.className} `: "";
-    classes += " list";
-    return classes;
-  },
+  mixins: [Mixins.classGenerator],
   
   render() {
-    return <div className={this.classes()}>
+    return <div className={this.getClasses("ui", "list")}>
       {this.props.children}
     </div>;
   }

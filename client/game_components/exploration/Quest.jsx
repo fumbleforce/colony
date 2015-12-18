@@ -36,6 +36,9 @@ Quest = React.createClass({
   render() {
     let props = this.props;
     
-    return <ListItem header={props.name} description={props.duration + " days"} right={this.renderFunctionality()} />;
+    return <Item
+      header={props.name}
+      description={props.duration + " days"}
+      right={this.renderFunctionality()} />;
   }
 });

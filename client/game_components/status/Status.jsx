@@ -22,19 +22,19 @@ Status = React.createClass({
   },
   
   render() {
-    return <Menu className="attached inverted">
-      <MenuItem>
+    return <Menu className="attached inverted brown">
+      <Item>
         Mayor Bob
-      </MenuItem>
-      <MenuItem>
+      </Item>
+      <Item>
         MyTown
-      </MenuItem>
-      <MenuItem>
+      </Item>
+      <Item>
         Town Size 1
-      </MenuItem>
-      <MenuItem>
+      </Item>
+      <Item>
         {Utility.money(100000)}
-      </MenuItem>
+      </Item>
     </Menu>;
   }
 });

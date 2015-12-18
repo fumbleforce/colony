@@ -24,7 +24,7 @@ Exploration = React.createClass({
   render() {
     return <div>
     
-      <Grid width="two">
+      <Grid className="two column">
         <Column>
           <Segment>
             4 000 experience

@@ -1,4 +1,4 @@
-Unit = React.createClass({
+MilitiaUnit = React.createClass({
   mixins: [ReactMeteorData],
   
   propTypes: {
@@ -40,6 +40,10 @@ Unit = React.createClass({
   render() {
     let props = this.props;
     
-    return <Card className="centered" header={this.props.name} description={this.renderStats()} extra={this.renderFunctionality()} />;
+    return <Card
+      className="centered"
+      header={this.props.name}
+      description={this.renderStats()}
+      extra={this.renderFunctionality()} />;
   }
 });

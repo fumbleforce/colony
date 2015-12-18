@@ -23,28 +23,127 @@ TownStatistics = React.createClass({
   
   render() {
     return <Segment className="basic">
-      <h2 className="ui left aligned header">Statistics</h2>
       
-      <h4>Population</h4>
-      <Statistics size="mini">
-        <Statistic label="Settlers" value={1200} />
-        <Statistic label="Explorers" value={10} />
-        <Statistic label="Militiamen" value={1500} />
-        <Statistic label="Traders" value={200} />
-      </Statistics>
-      <Statistics size="mini">
-        <Statistic label="Immigrants" value="122 / yr" />
-        <Statistic label="Births" value="122 / yr" />
-        <Statistic label="Deaths" value="222 / yr" />
-        <Statistic label="Growth" value="2.3 %" />
-      </Statistics>
+      <Grid className="two column">
+        <Column>
+          <Segment>
+          <h4>Professions</h4>
+          <Table className="very basic">
+            <tbody>
+              <tr>
+               <td>
+                Settlers
+                </td>
+                <td>
+                 {1200}
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Explorers
+                </td>
+                <td>
+                 {10}
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Militiamen
+                </td>
+                <td>
+                 {1500}
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Traders
+                </td>
+                <td>
+                 {200}
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+        </Segment>
+        </Column>
+        <Column>
+          <Segment>
+          <h4>Population</h4>
+          <Table className="very basic">
+            <tbody>
+              <tr>
+               <td>
+                Immigrants
+                </td>
+                <td>
+                 122 / yr
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Births
+                </td>
+                <td>
+                 122 / yr
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Deaths
+                </td>
+                <td>
+                 222 / yr
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Growth
+                </td>
+                <td>
+                 2.3 %
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+        </Segment>
+        </Column>
+      </Grid>
       
-      <h4>Crime</h4>
-      <Statistics size="mini">
-        <Statistic label="Thefts" value={532} />
-        <Statistic label="Assaults" value={142} />
-        <Statistic label="Murders" value={23} />
-      </Statistics>
+      <Grid className="two column">
+        <Column>
+          <Segment>
+          <h4>Crime</h4>
+          <Table className="very basic">
+            <tbody>
+              <tr>
+               <td>
+                Thefts
+                </td>
+                <td>
+                 {532}
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Assaults
+                </td>
+                <td>
+                 {142}
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Murders
+                </td>
+                <td>
+                 {23}
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+        </Segment>
+        </Column>
+      </Grid>
     </Segment>;
   }
 });

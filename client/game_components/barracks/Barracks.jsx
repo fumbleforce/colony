@@ -25,7 +25,7 @@ Barracks = React.createClass({
     return <div>
       
       <Segment>
-        <Statistics width="four">
+        <Statistics className="four statistics">
           <Statistic label="Manpower" value={Utility.number(10000)}></Statistic>
           <Statistic label="Dicipline" value={89 + " %"}></Statistic>
           <Statistic label="Morale" value={81 + " %"}></Statistic>
@@ -35,15 +35,15 @@ Barracks = React.createClass({
       
       <h2 className="ui header">Army composition</h2>
       
-      <Grid colums="three" equal={true}>
+      <Grid className="three column equal width">
         <Column>
-          <Unit name="Musketeer"></Unit>
+          <MilitiaUnit name="Musketeer"></MilitiaUnit>
         </Column>
         <Column>
-          <Unit name="Hussar"></Unit>
+          <MilitiaUnit name="Hussar"></MilitiaUnit>
         </Column>
         <Column>
-          <Unit name="Chief"></Unit>
+          <MilitiaUnit name="Chief"></MilitiaUnit>
         </Column>
       </Grid>
       

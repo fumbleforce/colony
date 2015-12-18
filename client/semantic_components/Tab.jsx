@@ -10,14 +10,13 @@ Tab = React.createClass({
   }
 });
 
-
 TabContent = React.createClass({
   propTypes: {
     tab: React.PropTypes.string,
   },
   
   render() {
-    return <div className={(this.props.active?"active ":"")+"ui tab bottom attached segment"} data-tab={this.props.tab}>
+    return <div className={(this.props.active?"active ":"")+"ui tab basic segment"} data-tab={this.props.tab}>
       {this.props.children}
     </div>;
   }
@@ -34,7 +33,7 @@ TabMenu = React.createClass({
   },
   
   render() {
-    return <div className="ui tabular top attached menu">
+    return <div className="ui secondary pointing tabular top attached menu">
       {this.props.children}
     </div>;
   }

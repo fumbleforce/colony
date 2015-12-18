@@ -1,21 +1,15 @@
+
 Menu = React.createClass({
-  
-  classes () {
-    let props = this.props;
-    let classes = "ui ";
-    
-    classes += props.className ? ` ${props.className} `: "";
-    classes += " menu";
-    return classes;
-  },
+  mixins: [Mixins.classGenerator],
+
   
   render() {
-    return <div className={this.classes()}>
+    return <div className={this.getClasses("ui", "menu")}>
       {this.props.children}
     </div>;
   }
 });
-
+/*
 MenuItem = React.createClass({
   
   classes () {
@@ -29,13 +23,14 @@ MenuItem = React.createClass({
   
   render() {
     if (this.props.href) {
-      return <a href={this.props.href} className={this.classes()}>
+      return <a href={this.props.href} className={this.getClasses("")}>
         {this.props.children}
       </a>;
     }
     
-    return <div className={this.classes()}>
+    return <div className={this.getClasses("")}>
       {this.props.children}
     </div>;
   }
 });
+*/

@@ -23,6 +23,8 @@ accounts-password
 
 msavin:mongol
 react
+meteorhacks:npm
+cosmos:browserify
 kadira:flow-router
 kadira:react-layout
 meteorhacks:fast-render
@@ -32,3 +34,5 @@ jagi:astronomy-timestamp-behavior
 momentjs:moment
 mquandalle:stylus
 numeral:numeral
+
+npm-container

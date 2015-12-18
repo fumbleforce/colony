@@ -1,48 +1,29 @@
 Form = React.createClass({
-  classes () {
-    let props = this.props;
-    let classes = "ui ";
-    
-    classes += props.className ? ` ${props.className} `: "";
-    classes += " form";
-    return classes;
-  },
+  mixins: [Mixins.classGenerator],
   
   render() {
     let props = this.props;
     
-    return <form className={this.classes()}>
+    return <form className={this.getClasses("ui", "form")}>
       {this.props.children}
     </form>;
   }
 });
 
 Field = React.createClass({
-  classes () {
-    let props = this.props;
-    let classes = "field ";
-    
-    classes += props.className ? ` ${props.className} `: "";
-    return classes;
-  },
+  mixins: [Mixins.classGenerator],
   
   render() {
     let props = this.props;
     
-    return <div className={this.classes()}>
+    return <div className={this.getClasses("field")}>
       {this.props.children}
     </div>;
   }
 });
 
 Slider = React.createClass({
-  classes () {
-    let props = this.props;
-    let classes = "ui slider range ";
-    
-    classes += props.className ? ` ${props.className} `: "";
-    return classes;
-  },
+  mixins: [Mixins.classGenerator],
   
   getDefaultProps () {
     return {
@@ -70,10 +51,9 @@ Slider = React.createClass({
       "verticalAlign": "super"
     };
     
-    return <div className={this.classes()}>
+    return <div className={this.getClasses("ui", "range slider")}>
       <input type="range" defaultValue={value} min={props.min} max={props.max} step={props.step} onInput={this.handleInput}/>
       <span style={valueStyle}>{value} {props.postfix}</span>
     </div>;
   }
 });
-

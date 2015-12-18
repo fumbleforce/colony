@@ -1,13 +1,6 @@
-Item = React.createClass({
-  classes () {
-    let props = this.props;
-    let classes = "ui ";
-    
-    classes += props.width ? ` ${props.width} wide `: "";
-    classes += props.className ? ` ${props.className} `: "";
-    classes += " item";
-    return classes;
-  },
+Card = React.createClass({
+  
+  mixins: [Mixins.classGenerator],
   
   renderIcon() {
     return <div className="image">
@@ -30,7 +23,7 @@ Item = React.createClass({
   },
   
   renderExtra () {
-    return <div className="extra">
+    return <div className="extra content">
       {this.props.extra}
     </div>
   },
@@ -38,31 +31,26 @@ Item = React.createClass({
   render() {
     let props = this.props;
     
-    return <div className={this.classes()}>
+    return <div className={this.getClasses("ui card")}>
       {props.icon ? this.renderIcon() : ""}
       
       <div className="content">
         {props.header ? this.renderHeader() : ""}
         {props.meta ? this.renderMeta() : ""}
         {props.description ? this.renderDescription() : ""}
-        {props.extra ? this.renderExtra() : ""}
       </div>
+      
+      {props.extra ? this.renderExtra() : ""}
     </div>;
   }
 });
 
-
-Items = React.createClass({
-  classes () {
-    let props = this.props;
-    let classes = "ui ";
-    classes += props.className ? ` ${props.className} `: "";
-    classes += " items";
-    return classes;
-  },
+Cards = React.createClass({
+  
+  mixins: [Mixins.classGenerator],
   
   render() {
-    return <div className={this.classes()}>
+    return <div className={this.getClasses("ui cards")}>
       {this.props.children}
     </div>;
   }
