@@ -50,6 +50,14 @@ FlowRouter.route("/gathering", {
   }
 });
 
+FlowRouter.route("/crafting", {
+  action () {
+    ReactLayout.render(MainLayout, {
+      content: <Crafting />
+    });
+  }
+});
+
 FlowRouter.route("/inventory", {
   action () {
     ReactLayout.render(MainLayout, {

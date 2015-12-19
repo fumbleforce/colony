@@ -3,4 +3,31 @@ body
     background-color: #efefef
 
 main
-  padding-top: 110px;
+  padding:20px !important;
+  padding-top: 30px !important;
+
+
+.body-container
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  
+  .body-sidebar
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    
+  .body-content
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-width: 0px; 

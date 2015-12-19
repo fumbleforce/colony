@@ -22,11 +22,10 @@ TownStatistics = React.createClass({
   },
   
   render() {
-    return <Segment className="basic">
+    return <Segment className="secondary">
       
       <Grid className="two column">
         <Column>
-          <Segment>
           <h4>Professions</h4>
           <Table className="very basic">
             <tbody>
@@ -64,10 +63,8 @@ TownStatistics = React.createClass({
               </tr>
             </tbody>
           </Table>
-        </Segment>
         </Column>
         <Column>
-          <Segment>
           <h4>Population</h4>
           <Table className="very basic">
             <tbody>
@@ -105,13 +102,11 @@ TownStatistics = React.createClass({
               </tr>
             </tbody>
           </Table>
-        </Segment>
         </Column>
       </Grid>
       
       <Grid className="two column">
         <Column>
-          <Segment>
           <h4>Crime</h4>
           <Table className="very basic">
             <tbody>
@@ -141,7 +136,45 @@ TownStatistics = React.createClass({
               </tr>
             </tbody>
           </Table>
-        </Segment>
+        </Column>
+        <Column>
+          <h4>Economy</h4>
+          <Table className="very basic">
+            <tbody>
+              <tr>
+               <td>
+                GCP
+                </td>
+                <td>
+                 {Utility.money(20033565)}
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Income
+                </td>
+                <td>
+                 {1102}
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Expenses
+                </td>
+                <td>
+                 {562}
+                </td>
+              </tr>
+              <tr>
+               <td>
+                Profit / day
+                </td>
+                <td>
+                 {500}
+                </td>
+              </tr>
+            </tbody>
+          </Table>
         </Column>
       </Grid>
     </Segment>;

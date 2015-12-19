@@ -4,7 +4,9 @@ Menu = React.createClass({
 
   
   render() {
-    return <div className={this.getClasses("ui", "menu")}>
+    let {className, ...other} = this.props;
+    
+    return <div {...other} className={this.getClasses("ui", "menu")}>
       {this.props.children}
     </div>;
   }

@@ -22,7 +22,7 @@ TownStatus = React.createClass({
   },
   
   render() {
-    return <Segment className="basic">
+    return <Segment className="">
       
       <h2 className="ui header">Status</h2>
     

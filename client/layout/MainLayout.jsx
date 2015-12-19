@@ -1,13 +1,20 @@
 MainLayout = React.createClass({
   render() {
-    return <div>
-      <Header />
+    return <div className="body-container">
       
-      <main className="">
-        {this.props.content}
-      </main>
+      <div className="body-sidebar">
+        <Sidebar />
+      </div>
       
-      <Footer />
+      <div className="body-content">
+        <Header />
+        
+        <main className="">
+          {this.props.content}
+        </main>
+        
+        <Footer />
+      </div>
     </div>
   }
 });
