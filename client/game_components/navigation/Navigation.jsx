@@ -30,7 +30,7 @@ Navigation = React.createClass({
       //"backgroundColor": "#efefef"
     };
     
-    return <Menu style={style} className="vertical fluid inverted labeled icon navigation-menu">
+    return <Menu style={style} className="horizontal fluid attached labeled icon navigation-menu">
         <Item type="link" active={this.isActive("/town")} href="/town">
             <i className="icon rpg rpg-Icon5_72"></i>
             Town

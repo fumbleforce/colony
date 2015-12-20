@@ -30,16 +30,10 @@ Sidebar = React.createClass({
     };
     
     return <div className="">
+      
+      <Status />
     
-      <Navigation />
       
-      <h3 className="ui header">Materials</h3>
-      
-      <h3 className="ui header">Gathering</h3>
-      
-      <h3 className="ui header">Production</h3>
-      
-      <h3 className="ui header">Militia</h3>
       
       
     </div>;
