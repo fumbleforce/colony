@@ -53,7 +53,7 @@ Status = React.createClass({
         <tbody>
           <tr>
             <td>
-              <Icon icon="stone-block" size="tiny" /> Grain
+              <Icon icon="wheat" size="tiny" /> Grain
             </td>
             <td>
               {Utility.number(1230)}
@@ -109,7 +109,7 @@ Status = React.createClass({
       <Grid className="two column">
         <Row>
             <Column>
-              <Icon icon="anvil" size="tiny" /> Smithy
+              <Icon icon="anvil" size="tiny" /> Smithing
             </Column>
             <Column>
               <Progress />

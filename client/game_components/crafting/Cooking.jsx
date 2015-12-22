@@ -1,4 +1,4 @@
-Crafting = React.createClass({
+Cooking = React.createClass({
   mixins: [ReactMeteorData],
   
   propTypes: {
@@ -17,13 +17,11 @@ Crafting = React.createClass({
     }
   },
   
-  componentDidMount() {
-      
-  },
-  
   render() {
-    return <div>
-      Crafting
-    </div>;
+    return (
+      <div>
+        Cooking
+      </div>
+    );
   }
 });

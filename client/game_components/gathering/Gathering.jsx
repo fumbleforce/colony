@@ -38,6 +38,7 @@ Gathering = React.createClass({
         <GatheringFacility icon="wood-axe" name="Lumber camps" plots={1} rate={4} resource="log" />
         <GatheringFacility icon="meat-cleaver" name="Pastures" plots={5} rate={3} resource="meat" />
         <GatheringFacility icon="mining" name="Quarry" plots={0} rate={9} resource="stone" />
+        <GatheringFacility icon="gold-mine" name="Mine" plots={0} rate={9} resource="ore" />
       </GatheringFacilities>
       
     </div>;

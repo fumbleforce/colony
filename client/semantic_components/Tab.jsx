@@ -28,12 +28,14 @@ TabMenu = React.createClass({
     tab: React.PropTypes.string,
   },
   
+  mixins: [Mixins.classGenerator],
+  
   componentDidMount() {
-      $('.tabular.menu .item').tab();
+      $('.menu .item').tab();
   },
   
   render() {
-    return <div className="ui secondary pointing tabular top attached menu">
+    return <div className={this.getClasses("ui", "menu")}>
       {this.props.children}
     </div>;
   }

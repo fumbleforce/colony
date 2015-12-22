@@ -10,7 +10,11 @@ Progress = React.createClass({
   },
   
   render() {
-    return <div className={this.getClasses("ui", "progress")}>
+    let style = {
+      marginBottom: "0px"
+    };
+    
+    return <div style={style} className={this.getClasses("ui", "progress")}>
         <div className="bar"></div>
       <div className="label">{this.props.label}</div>
     </div>;

@@ -24,7 +24,7 @@ Market = React.createClass({
   render() {
     return <div>
       
-      <TabMenu>
+      <TabMenu className="secondary pointing tabular top attached">
         <Tab tab="marketplace" active={true}>Marketplace</Tab>
         <Tab tab="caravans">Caravans</Tab>
         <Tab tab="trading">Trading</Tab>
