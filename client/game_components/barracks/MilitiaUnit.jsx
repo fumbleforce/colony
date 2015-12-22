@@ -5,7 +5,7 @@ MilitiaUnit = React.createClass({
 
   },
   
-  getMeteorData() {
+  getMeteorData () {
     return {
       
     }

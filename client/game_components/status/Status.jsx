@@ -53,26 +53,42 @@ Status = React.createClass({
         <tbody>
           <tr>
             <td>
-              <Icon size="tiny" /> Stone
+              <Icon icon="stone-block" size="tiny" /> Grain
             </td>
             <td>
               {Utility.number(1230)}
+              <br/>
+              +{Utility.number(1230)} / day
             </td>
           </tr>
           <tr>
             <td>
-              <Icon size="tiny" /> Wood
+              <Icon icon="stone-block" size="tiny" /> Stone
             </td>
             <td>
               {Utility.number(1230)}
+              <br/>
+              +{Utility.number(1230)} / day
             </td>
           </tr>
           <tr>
             <td>
-              <Icon size="tiny" /> Metals
+              <Icon icon="log" size="tiny" /> Wood
             </td>
             <td>
               {Utility.number(1230)}
+              <br/>
+              +{Utility.number(1230)} / day
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Icon icon="stone-pile" size="tiny" /> Ore
+            </td>
+            <td>
+              {Utility.number(1230)}
+              <br/>
+              +{Utility.number(1230)} / day
             </td>
           </tr>
           <tr>
@@ -81,62 +97,19 @@ Status = React.createClass({
             </td>
             <td>
               {Utility.number(1230)}
+              <br/>
+              +{Utility.number(1230)} / day
             </td>
           </tr>
         </tbody>
       </Table>
       
-      <h3 className="ui header">Gathering</h3>
-      <Table className="very basic">
-        <tbody>
-          <tr>
-            <td>
-              <Icon size="tiny" /> Stone
-            </td>
-            <td>
-              {Utility.number(1230)} / day
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <Icon size="tiny" /> Wood
-            </td>
-            <td>
-              {Utility.number(1230)} / day
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <Icon size="tiny" /> Metals
-            </td>
-            <td>
-              {Utility.number(1230)} / day
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <Icon size="tiny" /> Clay
-            </td>
-            <td>
-              {Utility.number(1230)} / day
-            </td>
-          </tr>
-        </tbody>
-      </Table>
       
       <h3 className="ui header">Production</h3>
       <Grid className="two column">
         <Row>
             <Column>
-              <Icon size="tiny" /> Smithy
-            </Column>
-            <Column>
-              <Progress />
-            </Column>
-        <Row>
-        </Row>
-            <Column>
-              <Icon size="tiny" /> Workshop
+              <Icon icon="anvil" size="tiny" /> Smithy
             </Column>
             <Column>
               <Progress />
@@ -144,7 +117,7 @@ Status = React.createClass({
         </Row>
         <Row>
             <Column>
-              <Icon size="tiny" /> Baker
+              <Icon icon="stake-hammer" size="tiny" /> Workshop
             </Column>
             <Column>
               <Progress />
@@ -152,7 +125,15 @@ Status = React.createClass({
         </Row>
         <Row>
             <Column>
-              <Icon size="tiny" /> Lumber yard
+              <Icon icon="windmill" size="tiny" /> Baker
+            </Column>
+            <Column>
+              <Progress />
+            </Column>
+        </Row>
+        <Row>
+            <Column>
+              <Icon icon="hand-saw" size="tiny" /> Lumber yard
             </Column>
             <Column>
               <Progress />
@@ -165,7 +146,7 @@ Status = React.createClass({
         <tbody>
           <tr>
             <td>
-              <Icon size="tiny" /> Musketmen
+              <Icon icon="pikeman" size="tiny" /> Musketmen
             </td>
             <td>
               {Utility.number(1230)}
@@ -173,7 +154,7 @@ Status = React.createClass({
           </tr>
           <tr>
             <td>
-              <Icon size="tiny" /> Cavalry
+              <Icon icon="cavalry" size="tiny" /> Cavalry
             </td>
             <td>
               {Utility.number(1230)}
@@ -181,7 +162,7 @@ Status = React.createClass({
           </tr>
           <tr>
             <td>
-              <Icon size="tiny" /> Cannons
+              <Icon icon="cannon" size="tiny" /> Cannons
             </td>
             <td>
               {Utility.number(1230)}
@@ -189,7 +170,7 @@ Status = React.createClass({
           </tr>
           <tr>
             <td>
-              <Icon size="tiny" /> Engineers
+              <Icon icon="gear-hammer" size="tiny" /> Engineers
             </td>
             <td>
               {Utility.number(1230)}
