@@ -48,7 +48,6 @@ HighchartConfigs._configs.sparkline = {
         enabled: false
     },
     tooltip: {
-
         formatter: function () {
             return '<b>' + this.series.name + ': ' +
                 Highcharts.numberFormat(this.y, 2);

@@ -18,7 +18,7 @@ Chart = React.createClass({
     
     console.log("before", HighchartConfigs.get(chartType));
     let normalConfigs = HighchartConfigs.get(chartType);
-    let extendedConfig = _.extend(normalConfigs, config);
+    let extendedConfig = _.deepExtend(normalConfigs, config);
     console.log("extended", extendedConfig);
     
     let chartConfig = extendedConfig.chart;

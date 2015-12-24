@@ -64,7 +64,9 @@ Navigation = React.createClass({
             Relations
         </Item>
         <Item type="link" active={this.isActive("/inventory")} href="/inventory">
-            <i className="icon rpg rpg-Icon3_92"></i>
+            <i className="icon">
+              <Icon icon="chest" size="small" />
+            </i>
             Inventory
         </Item>
         <Item type="link" active={this.isActive("/exploration")} href="/exploration">

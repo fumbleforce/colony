@@ -24,19 +24,15 @@ Town = React.createClass({
   render() {
     return <div>
       
-      <h1 className="ui centered header">Town</h1>
-      
       <Grid className="two column">
         <Column>
+          <TownPolicies />
           <TownStatus />
         </Column>
         <Column>
           <TownStatistics />
         </Column>
       </Grid>
-      
-      <TownPolicies />
-      
       
     </div>;
   }

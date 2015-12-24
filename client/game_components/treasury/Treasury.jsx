@@ -37,6 +37,7 @@ Treasury = React.createClass({
       },
       series: [
         {
+          color: "#fff",
           name: "Cash",
           data: [100, 234, 310, 30, 312, 120, 200, 300]
         }
