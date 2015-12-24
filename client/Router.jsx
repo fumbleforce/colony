@@ -90,6 +90,13 @@ FlowRouter.route("/relations", {
   }
 });
 
+FlowRouter.route("/newsboard", {
+  action () {
+    ReactLayout.render(MainLayout, {
+      content: <Newsboard />
+    });
+  }
+});
 
 FlowRouter.route("/settings", {
   action () {
