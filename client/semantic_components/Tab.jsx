@@ -1,4 +1,6 @@
 Tab = React.createClass({
+  mixins: [Mixins.classGenerator, Mixins.stateSelector],
+  
   propTypes: {
     tab: React.PropTypes.string,
   },
@@ -11,14 +13,30 @@ Tab = React.createClass({
 });
 
 TabContent = React.createClass({
+  mixins: [Mixins.classGenerator, Mixins.stateSelector],
+  
   propTypes: {
     tab: React.PropTypes.string,
   },
   
   render() {
-    return <div className={(this.props.active?"active ":"")+"ui tab basic segment"} data-tab={this.props.tab}>
-      {this.props.children}
-    </div>;
+    let {
+      className,
+      active,
+      tab,
+      ...other
+    } = this.props;
+    
+    let state = {
+      active: this.getActive(),
+    }
+    
+    return  <div {...other}
+        data-tab={tab}
+        className={this.getClasses("ui tab", state)}>
+        
+        {this.props.children}
+      </div>
   }
 });
 

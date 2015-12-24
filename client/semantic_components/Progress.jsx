@@ -23,12 +23,7 @@ Progress = React.createClass({
     let style = {
       marginBottom: this.props.label ? "": "0px"
     };
-/*    
-    return <div style={style} className={this.getClasses("ui", "progress")}>
-        <div className="bar"></div>
-      <div className="label">{this.props.label}</div>
-    </div>;
-  */
+
     let {
       className,
       percent, value, total,

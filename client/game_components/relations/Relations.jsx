@@ -28,19 +28,27 @@ Relations = React.createClass({
         <Column className="four wide">
           <TabMenu className="vertical fluid icon pointing">
             <Tab tab="Letters" active={true}>
-              <Icon icon="envelope" size="small" />
+              <i className="icon rpg small">
+                <Icon icon="envelope" size="tiny" />
+              </i>
               Letters
             </Tab>
             <Tab tab="People">
-              <Icon icon="backup" size="small" />
+              <i className="icon rpg small">
+                <Icon icon="backup" size="tiny" />
+              </i>
               People
             </Tab>
             <Tab tab="Friends">
-              <Icon icon="ages" size="small" />
+              <i className="icon rpg small">
+                <Icon icon="ages" size="tiny" />
+              </i>
               Friends
             </Tab>
             <Tab tab="Ignored">
-              <Icon icon="prisoner" size="small" />
+              <i className="icon rpg small">
+                <Icon icon="prisoner" size="tiny" />
+              </i>
               Ignored
             </Tab>
           </TabMenu>

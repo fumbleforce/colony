@@ -19,7 +19,16 @@ People = React.createClass({
   
   render() {
     return (
-      <div></div>
+      <div>
+      
+      <Segment>
+        <Input className="icon"> 
+          <i className="ui search icon" />
+          <input placeholder="Search name" />
+        </Input>
+      </Segment>
+      
+      </div>
     );
   }
 });
