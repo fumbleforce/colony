@@ -28,4 +28,3 @@ Statistics = React.createClass({
     </div>;
   }
 });
-

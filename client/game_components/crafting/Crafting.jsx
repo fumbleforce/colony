@@ -23,54 +23,42 @@ Crafting = React.createClass({
   
   render() {
     return <div>
-      <TabMenu className="icon">
+      <TabMenu className="secondary pointing icon">
         <Tab tab="Smithing" active={true}>
-          <Button className="labeled icon">
             <i className="icon">
               <Icon icon="anvil" size="tiny" />
             </i>
             Smithing
-          </Button>
         </Tab>
         <Tab tab="Smelting">
-          <Button className="labeled icon">
             <i className="icon">
               <Icon icon="brick-pile" size="tiny" />
             </i>
             Smelting
-          </Button>
         </Tab>
         <Tab tab="Alchemy">
-          <Button className="labeled icon">
             <i className="icon">
               <Icon icon="fizzing-flask" size="tiny" />
             </i>
             Alchemy
-          </Button>
         </Tab>
         <Tab tab="Cooking">
-          <Button className="labeled icon">
             <i className="icon">
               <Icon icon="cooking-pot" size="tiny" />
             </i>
             Cooking
-          </Button>
         </Tab>
         <Tab tab="Carpentry">
-          <Button className="labeled icon">
             <i className="icon">
               <Icon icon="hand-saw" size="tiny" />
             </i>
             Carpentry
-          </Button>
         </Tab>
         <Tab tab="Jewelcrafting">
-          <Button className="labeled icon">
             <i className="icon">
               <Icon icon="diamond-hard" size="tiny" />
             </i>
             Jewelcrafting
-          </Button>
         </Tab>
       </TabMenu>
       

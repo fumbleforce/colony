@@ -51,6 +51,14 @@ Navigation = React.createClass({
             <i className="icon rpg rpg-Icons8_88"></i>
             Crafting
         </Item>
+        <Item type="link" active={this.isActive("/labratory")} href="/labratory">
+            <i className="icon rpg rpg-Icons8_88"></i>
+            Labratory
+        </Item>
+        <Item type="link" active={this.isActive("/map")} href="/map">
+            <i className="icon rpg rpg-Icons8_88"></i>
+            Map
+        </Item>
         <Item type="link" active={this.isActive("/treasury")} href="/treasury">
             <i className="icon rpg rpg-Icons8_89"></i>
             Treasury
