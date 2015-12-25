@@ -23,6 +23,9 @@ Crafting = React.createClass({
   
   render() {
     return <div>
+    
+      <Grid>
+        <Column className="ten wide">
       <TabMenu className="secondary pointing icon">
         <Tab tab="Smithing" active={true}>
             <i className="icon">
@@ -85,6 +88,17 @@ Crafting = React.createClass({
       <TabContent tab="Jewelcrafting">
         <Jewelcrafting />
       </TabContent>
+      
+      </Column>
+      <Column className="six wide">
+        <h3 className="ui header">
+          Production line
+        </h3>
+        <List>
+          <Item right=<Button>X</Button>>Shiny boots</Item>
+        </List>
+      </Column>
+    </Grid>
     </div>;
   }
 });
