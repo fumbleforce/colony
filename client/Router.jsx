@@ -58,6 +58,22 @@ FlowRouter.route("/crafting", {
   }
 });
 
+FlowRouter.route("/map", {
+  action () {
+    ReactLayout.render(MainLayout, {
+      content: <Map />
+    });
+  }
+});
+
+FlowRouter.route("/labratory", {
+  action () {
+    ReactLayout.render(MainLayout, {
+      content: <Labratory />
+    });
+  }
+});
+
 FlowRouter.route("/inventory", {
   action () {
     ReactLayout.render(MainLayout, {

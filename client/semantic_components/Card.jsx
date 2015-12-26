@@ -4,7 +4,7 @@ Card = React.createClass({
   
   renderIcon() {
     return <div className="image">
-      <Icon icon={this.props.icon} size="large" />
+      <Icon icon={this.props.icon} centered={true} size="large" />
     </div>
   },
   
@@ -28,17 +28,42 @@ Card = React.createClass({
     </div>
   },
   
+  renderContent () {
+    let props = this.props;
+    
+    return <div className="content">
+      {props.header ? this.renderHeader() : ""}
+      {props.meta ? this.renderMeta() : ""}
+      {props.description ? this.renderDescription() : ""}
+    </div>
+  },
+  
+  renderContentInline () {
+    let props = this.props;
+    
+    return <div className="content">
+      <Grid>
+        <Column className="six wide">
+          <Icon icon={props.inlineIcon} />
+        </Column>
+        <Column className="ten wide">
+          {props.header ? this.renderHeader() : ""}
+          {props.meta ? this.renderMeta() : ""}
+          {props.description ? this.renderDescription() : ""}
+        </Column>
+      </Grid>
+    </div>
+  },
+  
+  
+  
   render() {
     let props = this.props;
     
     return <div className={this.getClasses("ui card")}>
       {props.icon ? this.renderIcon() : ""}
       
-      <div className="content">
-        {props.header ? this.renderHeader() : ""}
-        {props.meta ? this.renderMeta() : ""}
-        {props.description ? this.renderDescription() : ""}
-      </div>
+      {props.inlineIcon ? this.renderContentInline() : this.renderContent()}
       
       {props.extra ? this.renderExtra() : ""}
     </div>;

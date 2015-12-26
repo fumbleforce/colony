@@ -2,7 +2,7 @@
 
 Icon = React.createClass({
   
-  render() {
+  render () {
     let props = this.props;
     let width = "64";
     let height = "64";
@@ -19,6 +19,10 @@ Icon = React.createClass({
     }
     
     let style = { height, width };
+
+    if (props.centered) {
+      style.margin = "0 auto";
+    }
     
     return <img style={style} src={"/icons/" + this.props.icon + ".svg"} />
   }

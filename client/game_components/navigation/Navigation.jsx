@@ -44,19 +44,21 @@ Navigation = React.createClass({
             Barracks
         </Item>
         <Item type="link" active={this.isActive("/gathering")} href="/gathering">
-            <i className="icon rpg rpg-Icon5_76"></i>
+            <i className="icon">
+              <Icon icon="mine-wagon" size="small" />
+            </i>
             Gathering
         </Item>
         <Item type="link" active={this.isActive("/crafting")} href="/crafting">
-            <i className="icon rpg rpg-Icons8_88"></i>
+            <i className="icon">
+              <Icon icon="stone-crafting" size="small" />
+            </i>
             Crafting
         </Item>
-        <Item type="link" active={this.isActive("/labratory")} href="/labratory">
-            <i className="icon rpg rpg-Icons8_88"></i>
-            Labratory
-        </Item>
         <Item type="link" active={this.isActive("/map")} href="/map">
-            <i className="icon rpg rpg-Icons8_88"></i>
+            <i className="icon">
+              <Icon icon="treasure-map" size="small" />
+            </i>
             Map
         </Item>
         <Item type="link" active={this.isActive("/treasury")} href="/treasury">
@@ -69,12 +71,14 @@ Navigation = React.createClass({
         </Item>
         <Item type="link" active={this.isActive("/inventory")} href="/inventory">
             <i className="icon">
-              <Icon icon="chest" size="small" />
+              <Icon icon="cash" size="small" />
             </i>
             Inventory
         </Item>
         <Item type="link" active={this.isActive("/exploration")} href="/exploration">
-            <i className="icon rpg rpg-Icon5_56"></i>
+            <i className="icon">
+              <Icon icon="spyglass" size="small" />
+            </i>
             Exploration
         </Item>
         <Item type="link" active={this.isActive("/newsboard")} href="/newsboard">

@@ -42,7 +42,9 @@ MilitiaUnit = React.createClass({
     
     return <Card
       className="centered"
+      icon={this.props.icon}
       header={this.props.name}
+      inlineIcon={this.props.inlineIcon}
       description={this.renderStats()}
       extra={this.renderFunctionality()} />;
   }
