@@ -24,15 +24,38 @@ Town = React.createClass({
   render() {
     return <div>
       
-      <Grid className="two column">
-        <Column>
-          <TownPolicies />
-        </Column>
-        <Column>
-          <TownStatus />
-          <TownStatistics />
-        </Column>
-      </Grid>
+      <TabMenu className="secondary pointing icon">
+        <Tab tab="Population" active={true}>
+            <i className="icon">
+              <Icon icon="anvil" size="tiny" />
+            </i>
+            Population
+        </Tab>
+        <Tab tab="Development">
+            <i className="icon">
+              <Icon icon="fizzing-flask" size="tiny" />
+            </i>
+            Development
+        </Tab>
+        <Tab tab="Law">
+            <i className="icon">
+              <Icon icon="brick-pile" size="tiny" />
+            </i>
+            Law and Policy
+        </Tab>
+      </TabMenu>
+      
+      <TabContent tab="Population" active={true}>
+        <Population />
+      </TabContent>
+      
+      <TabContent tab="Development">
+        <Development />
+      </TabContent>
+      
+      <TabContent tab="Law">
+        <LawAndPolicy />
+      </TabContent>
       
     </div>;
   }

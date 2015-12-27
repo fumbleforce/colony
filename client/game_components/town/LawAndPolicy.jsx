@@ -1,4 +1,4 @@
-TownPolicies = React.createClass({
+LawAndPolicy = React.createClass({
   mixins: [ReactMeteorData],
   
   propTypes: {

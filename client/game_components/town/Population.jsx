@@ -1,4 +1,4 @@
-TownStatistics = React.createClass({
+Population = React.createClass({
   mixins: [ReactMeteorData],
   
   propTypes: {
@@ -23,6 +23,63 @@ TownStatistics = React.createClass({
   
   render() {
     return <Segment className="secondary">
+      
+      <Segment>
+        <h2 className="ui header">Status</h2>
+      
+        <Table className="very basic">
+          <tbody>
+            <tr>
+              <td className="collapsing">
+                Happiness
+              </td>
+              <td>
+                <Progress init={{percent: 22}} className="indicating" />
+              </td>
+            </tr>
+            <tr>
+              <td className="collapsing">
+                Health
+              </td>
+              <td>
+                <Progress init={{percent: 22}} className="indicating" />
+              </td>
+            </tr>
+            <tr>
+              <td className="collapsing">
+                Hunger
+              </td>
+              <td>
+                <Progress init={{percent: 22}} className="indicating" />
+              </td>
+            </tr>
+            <tr>
+              <td className="collapsing">
+                Loyalty
+              </td>
+              <td>
+                <Progress init={{percent: 22}} className="indicating" />
+              </td>
+            </tr>
+            <tr>
+              <td className="collapsing">
+                Equality
+              </td>
+              <td>
+                <Progress init={{percent: 22}} className="indicating" />
+              </td>
+            </tr>
+            <tr>
+              <td className="collapsing">
+                Prosperity
+              </td>
+              <td>
+                <Progress init={{percent: 22}} className="indicating" />
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+      </Segment>
       
       <Grid className="two column">
         <Column>
