@@ -27,9 +27,9 @@ Town = React.createClass({
       <Grid className="two column">
         <Column>
           <TownPolicies />
-          <TownStatus />
         </Column>
         <Column>
+          <TownStatus />
           <TownStatistics />
         </Column>
       </Grid>

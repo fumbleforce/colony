@@ -62,7 +62,9 @@ Navigation = React.createClass({
             Map
         </Item>
         <Item type="link" active={this.isActive("/treasury")} href="/treasury">
-            <i className="icon rpg rpg-Icons8_89"></i>
+            <i className="icon">
+              <Icon icon="cash" size="small" />
+            </i>
             Treasury
         </Item>
         <Item type="link" active={this.isActive("/relations")} href="/relations">
@@ -71,7 +73,7 @@ Navigation = React.createClass({
         </Item>
         <Item type="link" active={this.isActive("/inventory")} href="/inventory">
             <i className="icon">
-              <Icon icon="cash" size="small" />
+              <Icon icon="chest" size="small" />
             </i>
             Inventory
         </Item>

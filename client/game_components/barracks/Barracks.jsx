@@ -24,14 +24,66 @@ Barracks = React.createClass({
   render() {
     return <div>
       
-      <Segment>
-        <Statistics className="four mini">
-          <Statistic label="Manpower" value={Utility.number(10000)}></Statistic>
-          <Statistic label="Dicipline" value={89 + " %"}></Statistic>
-          <Statistic label="Morale" value={81 + " %"}></Statistic>
-          <Statistic label="Strength" value={Utility.number(230)}></Statistic>
-        </Statistics>
-      </Segment>
+      <Grid className="four column">
+        <Column>
+          <Segment>
+            <Statistics className="four mini horizontal">
+              <Statistic label="Manpower" value={Utility.number(10000)}></Statistic>
+              <Statistic label="Dicipline" value={89 + " %"}></Statistic>
+              <Statistic label="Morale" value={81 + " %"}></Statistic>
+              <Statistic label="Strength" value={Utility.number(230)}></Statistic>
+            </Statistics>
+          </Segment>
+        </Column>
+        <Column>
+          <Segment>
+            <h2 className="ui header">Armory</h2>
+            
+            <Table className="very basic">
+              <tbody>
+                <tr>
+                  <td>
+                    Hard leather boots
+                  </td>
+                  <td>
+                    30
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Soft leather boots
+                  </td>
+                  <td>
+                    30
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Thin cotton coat
+                  </td>
+                  <td>
+                    30
+                  </td>
+                </tr>
+                
+              </tbody>
+            </Table>
+          </Segment>
+        </Column>
+        <Column>
+          <Segment>
+            <h2 className="ui header">Armory</h2>
+            
+            <Statistics className="horizontal mini">
+              <Statistic label="Manpower" value={Utility.number(10000)}></Statistic>
+              <Statistic label="Dicipline" value={89 + " %"}></Statistic>
+              <Statistic label="Morale" value={81 + " %"}></Statistic>
+              <Statistic label="Strength" value={Utility.number(230)}></Statistic>
+            </Statistics>
+          </Segment>
+        </Column>
+      </Grid>
+      
       
       <h2 className="ui header">Army composition</h2>
       

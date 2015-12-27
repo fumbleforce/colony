@@ -64,6 +64,27 @@ Slider = React.createClass({
       "verticalAlign": "super"
     };
     
+    let rangeStyle = {
+      "width": "100%"
+    };
+    
+    
+    if (props.inline) {
+      return <Grid className="three column">
+        <Column>
+          <b>{props.label}</b>
+        </Column>
+        <Column>
+          <div className={this.getClasses("ui", "range slider")}>
+            <input style={rangeStyle} type="range" defaultValue={value} min={props.min} max={props.max} step={props.step} onInput={this.handleInput}/>
+          </div>
+        </Column>
+        <Column>
+            <span style={valueStyle}>{value} {props.postfix}</span>
+        </Column>
+      </Grid>
+    }
+    
     return <div className={this.getClasses("ui", "range slider")}>
       <input type="range" defaultValue={value} min={props.min} max={props.max} step={props.step} onInput={this.handleInput}/>
       <span style={valueStyle}>{value} {props.postfix}</span>
