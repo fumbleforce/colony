@@ -44,9 +44,9 @@ Exploration = React.createClass({
       
       <h2>Parties</h2>
       <Parties>
-        <Party explorers={10} equipment={{ "weapons": "musket", "armor": "steel", "utility": "utility", "rations": "rations" }} />
-        <Party explorers={20} equipment={{ "weapons": "musket", "armor": "steel", "utility": "utility", "rations": "rations" }} />
-        <Party explorers={3} equipment={{ "weapons": "gun", "armor": "cloth", "utility": "utility", "rations": "rations" }} />
+        <Party explorers={10} equipment={{ "weapons": "musket", "armor": "steel", "U": "U", "rations": "rations" }} />
+        <Party explorers={20} equipment={{ "weapons": "musket", "armor": "steel", "U": "U", "rations": "rations" }} />
+        <Party explorers={3} equipment={{ "weapons": "gun", "armor": "cloth", "U": "U", "rations": "rations" }} />
       </Parties>
       
       

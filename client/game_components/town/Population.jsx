@@ -203,7 +203,7 @@ Population = React.createClass({
                 GCP
                 </td>
                 <td>
-                 {Utility.money(20033565)}
+                 {U.money(20033565)}
                 </td>
               </tr>
               <tr>

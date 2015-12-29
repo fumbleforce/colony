@@ -32,6 +32,8 @@ email@1.0.8
 es5-shim@4.1.14
 fastclick@1.0.7
 geojson-utils@1.0.4
+gwendall:blaze-to-react@0.1.2
+gwendall:useraccounts-react@0.1.1
 hot-code-push@1.0.0
 html-tools@1.0.5
 htmljs@1.0.5
@@ -89,6 +91,7 @@ semantic:ui-css@2.1.2
 service-configuration@1.0.5
 session@1.1.1
 sha@1.0.4
+softwarerero:accounts-t9n@1.1.7
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 srp@1.0.4
@@ -99,5 +102,7 @@ tracker@1.0.9
 ui@1.0.8
 underscore@1.0.4
 url@1.0.5
+useraccounts:core@1.13.1
+useraccounts:semantic-ui@1.13.1
 webapp@1.2.3
 webapp-hashing@1.0.5

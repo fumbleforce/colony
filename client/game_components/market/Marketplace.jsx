@@ -22,6 +22,22 @@ Marketplace = React.createClass({
   },
   
   render() {
+    let categories = [
+      {
+        name: "Weapons",
+        value: "weapons",
+      },
+      {
+        name: "Armor",
+        value: "armor",
+      },
+      {
+        name: "Food",
+        value: "food",
+      },
+      
+    ];
+  
     return <div id="marketplace" {...this.props}>
       <Grid>
         <Column className="three wide">
@@ -40,17 +56,7 @@ Marketplace = React.createClass({
             </Item>
             <Item>
               <label>Category</label>
-              <Dropdown name="category" className="selection" default="Choose category" init={true}>
-                <Item>
-                  No category
-                </Item>
-                <Item data-value="weapons">
-                  Weapons
-                </Item>
-                <Item data-value="armor">
-                  Armor
-                </Item>
-              </Dropdown>
+              <Dropdown name="category" className="selection" default="Choose category" init={true} options={categories} />
             </Item>
           </div>
         </Column>
@@ -88,16 +94,16 @@ Marketplace = React.createClass({
                     Sword
                   </td>
                   <td>
-                    {Utility.money(5000)}
+                    {U.money(5000)}
                   </td>
                   <td>
-                    {Utility.money(300)}
+                    {U.money(300)}
                   </td>
                   <td>
-                    {Utility.number(20)}
+                    {U.number(20)}
                   </td>
                   <td>
-                    {Utility.number(0)}
+                    {U.number(0)}
                   </td>
                   <td>
                     <Button>Buy</Button>
@@ -112,16 +118,16 @@ Marketplace = React.createClass({
                     Shield
                   </td>
                   <td>
-                    {Utility.money(5000)}
+                    {U.money(5000)}
                   </td>
                   <td>
-                    {Utility.money(3200)}
+                    {U.money(3200)}
                   </td>
                   <td>
-                    {Utility.number(230)}
+                    {U.number(230)}
                   </td>
                   <td>
-                    {Utility.number(0)}
+                    {U.number(0)}
                   </td>
                   <td>
                     <Button>Buy</Button>
@@ -136,16 +142,16 @@ Marketplace = React.createClass({
                     Gun
                   </td>
                   <td>
-                    {Utility.money(5000)}
+                    {U.money(5000)}
                   </td>
                   <td>
-                    {Utility.money(4500)}
+                    {U.money(4500)}
                   </td>
                   <td>
-                    {Utility.number(3)}
+                    {U.number(3)}
                   </td>
                   <td>
-                    {Utility.number(0)}
+                    {U.number(0)}
                   </td>
                   <td>
                     <Button>Buy</Button>

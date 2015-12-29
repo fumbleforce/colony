@@ -1,4 +1,4 @@
-Town = React.createClass({
+TownView = React.createClass({
   mixins: [ReactMeteorData],
   
   propTypes: {

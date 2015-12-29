@@ -28,10 +28,10 @@ Barracks = React.createClass({
         <Column>
           <Segment>
             <Statistics className="four mini horizontal">
-              <Statistic label="Manpower" value={Utility.number(10000)}></Statistic>
+              <Statistic label="Manpower" value={U.number(10000)}></Statistic>
               <Statistic label="Dicipline" value={89 + " %"}></Statistic>
               <Statistic label="Morale" value={81 + " %"}></Statistic>
-              <Statistic label="Strength" value={Utility.number(230)}></Statistic>
+              <Statistic label="Strength" value={U.number(230)}></Statistic>
             </Statistics>
           </Segment>
         </Column>
@@ -75,10 +75,10 @@ Barracks = React.createClass({
             <h2 className="ui header">Armory</h2>
             
             <Statistics className="horizontal mini">
-              <Statistic label="Manpower" value={Utility.number(10000)}></Statistic>
+              <Statistic label="Manpower" value={U.number(10000)}></Statistic>
               <Statistic label="Dicipline" value={89 + " %"}></Statistic>
               <Statistic label="Morale" value={81 + " %"}></Statistic>
-              <Statistic label="Strength" value={Utility.number(230)}></Statistic>
+              <Statistic label="Strength" value={U.number(230)}></Statistic>
             </Statistics>
           </Segment>
         </Column>

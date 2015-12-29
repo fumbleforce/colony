@@ -2,7 +2,12 @@ Button = React.createClass({
   mixins: [Mixins.classGenerator],
   
   render() {
-    return <div className={this.getClasses("ui", "button")}>
+    let {
+      className,
+      ...others
+    } = this.props;
+    
+    return <div {...others} className={this.getClasses("ui", "button")}>
       {this.props.children}
     </div>;
   }
@@ -13,7 +18,12 @@ Buttons = React.createClass({
   mixins: [Mixins.classGenerator],
   
   render() {
-    return <div className={this.getClasses("ui", "buttons")}>
+    let {
+      className,
+      ...others
+    } = this.props;
+    
+    return <div {...others} className={this.getClasses("ui", "buttons")}>
       {this.props.children}
     </div>;
   }

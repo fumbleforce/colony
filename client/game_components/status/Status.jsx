@@ -1,24 +1,17 @@
 Status = React.createClass({
+  
   mixins: [ReactMeteorData],
+  
+  getMeteorData() {
+    let processes = [];
+    
+    return {
+      processes
+    }
+  },
   
   propTypes: {
 
-  },
-  
-  getMeteorData() {
-    return {
-      
-    }
-  },
-  
-  getInitialState() {
-    return {
-
-    }
-  },
-  
-  componentDidMount() {
-      
   },
   
   render() {
@@ -28,22 +21,32 @@ Status = React.createClass({
       margin: "5px"
     };
     
+    let {
+      currentUser,
+      towns,
+    } = this.props.data;
+    
+    let town = towns[0];
+    
+    let processes = this.data.processes;
+    
+    
     return <div style={style}>
       
       <h1 className="ui header">
-        MyTown
+        {town.name}
         
         <div className="sub header">
-          Mayor {"Bob"}
+          Mayor {town.mayor.name}
         </div>
       </h1>
       
       
       <div>
-        Town Size 1
+        <b>Size: </b> {town.getSize().label} ({town.getSize().size})
       </div>
       <div>
-        {Utility.money(100000)}
+        <b>Cash: </b> {U.money(town.cash)}
       </div>
       
       <Divider />
@@ -56,9 +59,9 @@ Status = React.createClass({
               <Icon icon="wheat" size="tiny" /> Grain
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.resources.grain)}
               <br/>
-              +{Utility.number(1230)} / day
+              +{U.number(town.getResourceRate("wood"))} / day
             </td>
           </tr>
           <tr>
@@ -66,9 +69,9 @@ Status = React.createClass({
               <Icon icon="stone-block" size="tiny" /> Stone
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.resources.stone)}
               <br/>
-              +{Utility.number(1230)} / day
+              +{U.number(town.getResourceRate("stone"))} / day
             </td>
           </tr>
           <tr>
@@ -76,9 +79,9 @@ Status = React.createClass({
               <Icon icon="log" size="tiny" /> Wood
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.resources.wood)}
               <br/>
-              +{Utility.number(1230)} / day
+              +{U.number(town.getResourceRate("wood"))} / day
             </td>
           </tr>
           <tr>
@@ -86,9 +89,9 @@ Status = React.createClass({
               <Icon icon="stone-pile" size="tiny" /> Ore
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.resources.ore)}
               <br/>
-              +{Utility.number(1230)} / day
+              +{U.number(town.getResourceRate("ore"))} / day
             </td>
           </tr>
           <tr>
@@ -96,9 +99,9 @@ Status = React.createClass({
               <Icon size="tiny" /> Clay
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.resources.clay)}
               <br/>
-              +{Utility.number(1230)} / day
+              +{U.number(town.getResourceRate("clay"))} / day
             </td>
           </tr>
         </tbody>
@@ -107,38 +110,16 @@ Status = React.createClass({
       
       <h3 className="ui header">Production</h3>
       <Grid className="two column">
-        <Row>
-            <Column>
-              <Icon icon="anvil" size="tiny" /> Smithing
-            </Column>
-            <Column>
-              <Progress />
-            </Column>
-        </Row>
-        <Row>
-            <Column>
-              <Icon icon="stake-hammer" size="tiny" /> Workshop
-            </Column>
-            <Column>
-              <Progress />
-            </Column>
-        </Row>
-        <Row>
-            <Column>
-              <Icon icon="windmill" size="tiny" /> Baker
-            </Column>
-            <Column>
-              <Progress />
-            </Column>
-        </Row>
-        <Row>
-            <Column>
-              <Icon icon="hand-saw" size="tiny" /> Lumber yard
-            </Column>
-            <Column>
-              <Progress />
-            </Column>
-        </Row>
+        {processes.map((process) => {
+          return <Row>
+              <Column>
+                <Icon icon="anvil" size="tiny" /> {U.labelify(process.profession)}
+              </Column>
+              <Column>
+                <Progress init={{ percent: town.getCraftingProgress(process.profession)}} />
+              </Column>
+          </Row>;
+        })}
       </Grid>
       
       <h3 className="ui header">Militia</h3>
@@ -149,7 +130,7 @@ Status = React.createClass({
               <Icon icon="pikeman" size="tiny" /> Musketmen
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.militia.infantry.count)}
             </td>
           </tr>
           <tr>
@@ -157,7 +138,7 @@ Status = React.createClass({
               <Icon icon="cavalry" size="tiny" /> Cavalry
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.militia.cavalry.count)}
             </td>
           </tr>
           <tr>
@@ -165,7 +146,7 @@ Status = React.createClass({
               <Icon icon="cannon" size="tiny" /> Cannons
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.militia.cannons.count)}
             </td>
           </tr>
           <tr>
@@ -173,7 +154,15 @@ Status = React.createClass({
               <Icon icon="gear-hammer" size="tiny" /> Engineers
             </td>
             <td>
-              {Utility.number(1230)}
+              {U.number(town.militia.engineers.count)}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <Icon icon="gear-hammer" size="tiny" /> Officers
+            </td>
+            <td>
+              {U.number(town.militia.officers.count)}
             </td>
           </tr>
         </tbody>

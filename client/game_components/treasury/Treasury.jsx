@@ -55,9 +55,9 @@ Treasury = React.createClass({
               <Grid className="two column">
                 <Column>
                   <h2 className="ui inverted header center aligned">
-                    Cash: {Utility.money(3002)}
+                    Cash: {U.money(3002)}
                     <div className="sub header">
-                      +{Utility.money(3002)} / day
+                      +{U.money(3002)} / day
                     </div>
                   </h2>
                 </Column>
@@ -71,9 +71,9 @@ Treasury = React.createClass({
               <Grid className="two column">
                 <Column>
                   <h2 className="ui inverted header center aligned">
-                    Income: {Utility.money(3002)}
+                    Income: {U.money(3002)}
                     <div className="sub header">
-                      +{Utility.money(3002)} / day
+                      +{U.money(3002)} / day
                     </div>
                   </h2>
                 </Column>
@@ -87,9 +87,9 @@ Treasury = React.createClass({
               <Grid className="two column">
                 <Column>
                   <h2 className="ui inverted header center aligned">
-                    Expenses: {Utility.money(3002)}
+                    Expenses: {U.money(3002)}
                     <div className="sub header">
-                      -{Utility.money(3002)} / day
+                      -{U.money(3002)} / day
                     </div>
                   </h2>
                 </Column>
@@ -119,7 +119,7 @@ Treasury = React.createClass({
                       Taxes
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr>
@@ -127,7 +127,7 @@ Treasury = React.createClass({
                       Trading
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr>
@@ -135,7 +135,7 @@ Treasury = React.createClass({
                       Stalls
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr>
@@ -143,7 +143,7 @@ Treasury = React.createClass({
                       Exploration
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr>
@@ -151,7 +151,7 @@ Treasury = React.createClass({
                       Raiding
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr className="sum">
@@ -159,7 +159,7 @@ Treasury = React.createClass({
                       Total
                     </th>
                     <th>
-                      {Utility.money(3211135)}
+                      {U.money(3211135)}
                     </th>
                   </tr>
                 </tbody>
@@ -176,7 +176,7 @@ Treasury = React.createClass({
                       Taxes
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr>
@@ -184,7 +184,7 @@ Treasury = React.createClass({
                       Trading
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr>
@@ -192,7 +192,7 @@ Treasury = React.createClass({
                       Stalls
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr>
@@ -200,7 +200,7 @@ Treasury = React.createClass({
                       Exploration
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr>
@@ -208,7 +208,7 @@ Treasury = React.createClass({
                       Raiding
                     </td>
                     <td>
-                      {Utility.money(3440)}
+                      {U.money(3440)}
                     </td>
                   </tr>
                   <tr className="sum">
@@ -216,7 +216,7 @@ Treasury = React.createClass({
                       Total
                     </th>
                     <th>
-                      {Utility.money(3211135)}
+                      {U.money(3211135)}
                     </th>
                   </tr>
                 </tbody>

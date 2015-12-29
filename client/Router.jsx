@@ -13,7 +13,7 @@ FlowRouter.route("/", {
 FlowRouter.route("/town", {
   action () {
     ReactLayout.render(MainLayout, {
-      content: <Town />
+      content: <TownView />
     });
   }
 });

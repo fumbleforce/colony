@@ -20,10 +20,13 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 check
 audit-argument-checks
 accounts-password
+react
+
+useraccounts:semantic-ui
+gwendall:useraccounts-react
 
 maazalik:highcharts
 msavin:mongol
-react
 meteorhacks:npm
 cosmos:browserify
 kadira:flow-router

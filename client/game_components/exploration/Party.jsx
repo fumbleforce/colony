@@ -47,8 +47,8 @@ Party = React.createClass({
           <td>{equipment.armor}</td>
         </tr>
         <tr>
-          <th>Utility</th>
-          <td>{equipment.utility}</td>
+          <th>U</th>
+          <td>{equipment.U}</td>
         </tr>
         <tr>
           <th>Rations</th>

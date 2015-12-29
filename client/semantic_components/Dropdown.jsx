@@ -26,7 +26,11 @@ Dropdown = React.createClass({
         <i className="dropdown icon"></i>
         <div className="default text">{this.props.default}</div>
         <div className="menu">
-            {this.props.children}
+          {this.props.options.map((item) => {
+            return <div key={item.value} className="item" data-value={item.value}>
+              {item.name}
+            </div>
+          })}
         </div>
       </Unit>
     );
@@ -37,12 +41,16 @@ Dropdown = React.createClass({
       if (this.props.init === false) {
         return;
       }
-
-      if (this.props.init === true) {
-        $(ReactDOM.findDOMNode(this)).dropdown();
-      } else {
-        $(ReactDOM.findDOMNode(this)).dropdown(this.props.init);
+      
+      let opts = {};
+      if (this.props.onChange) {
+        console.log("adding onchange to dropdown");
+        opts.onChange = (value, label, el) => {
+          let name = this.props.name;
+          this.props.onChange(name, value, el);
+        }
       }
+      $(ReactDOM.findDOMNode(this)).dropdown(opts);
     }
   }
 });
