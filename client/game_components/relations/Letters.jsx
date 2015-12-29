@@ -6,8 +6,21 @@ Letters = React.createClass({
   },
   
   getMeteorData() {
+    let letters = [];
+    
+    let letterSub = Meteor.subscribe("letters");
+    
+    if (letterSub.ready()) {
+      letters = Letter.find({}).fetch();
+      console.log(letters);
+      letters = _.map(letters, (letter) => {
+        letter.sender = Meteor.users.findOne(letter.senderId).username;
+        return letter;
+      });
+    }
+    
     return {
-      
+      letters
     }
   },
   
@@ -34,36 +47,13 @@ Letters = React.createClass({
         {letter.sender}
       </td>
       <td>
-        {moment(letter.sent).fromNow()}
+        {moment(letter.createdAt).fromNow()}
       </td>
     </tr>
   },
   
   render() {
-    let letters = [
-      {
-        _id: "123123123",
-        title: "mytitle",
-        sender: "Bob the sender",
-        message: "Hello there",
-        sent: new Date()
-      },
-      {
-        _id: "123123124",
-        title: "mytitle",
-        sender: "Bob the sender",
-        message: "Hello there",
-        sent: new Date()
-      },
-      {
-        _id: "123123125",
-        title: "mytitle",
-        sender: "Bob the sender",
-        message: "Hello there",
-        sent: new Date()
-      },
-      
-    ]
+    let letters = this.data.letters;
     
     return (
       <div>

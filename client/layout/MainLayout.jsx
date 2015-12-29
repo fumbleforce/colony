@@ -4,7 +4,8 @@ MainLayout = React.createClass({
   getMeteorData() {
     console.log(Meteor.userId());
     
-    let username = Meteor.user().username;
+    
+    let username = Meteor.user() && Meteor.user().username;
     let towns = [];
     let townCount = -1;
     
@@ -23,6 +24,7 @@ MainLayout = React.createClass({
       username,
       townCount,
       towns,
+      town: towns[0]
     }
   },
   
@@ -49,6 +51,9 @@ MainLayout = React.createClass({
   },
   
   renderGameLayout () {
+    let data = this.data;
+    let content = React.cloneElement(this.props.content, { data });
+    
     return <div className="body-container">
       <div className="body-sidebar">
         <Status data={this.data} />
@@ -58,7 +63,7 @@ MainLayout = React.createClass({
         <Header />
         
         <main className="">
-          {this.props.content}
+          {content}
         </main>
         
         <Footer />

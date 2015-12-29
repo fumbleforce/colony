@@ -14,8 +14,9 @@ Input = React.createClass({
       let value = e.target.value;
       let name = this.props.name;
       
+      console.log(name, value, "in put component");
       if (this.props.onChange) {
-        this.props.onChange(name, value, e.target);
+        this.props.onChange(name, value, e.target, e);
       }
   },
   

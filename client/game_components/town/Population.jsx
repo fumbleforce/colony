@@ -22,6 +22,13 @@ Population = React.createClass({
   },
   
   render() {
+    console.log(this.props);
+    let town = this.props.data.town;
+    
+    let statuses = _.map(town.populationStatus, (value, name) => {
+      return { name, value };
+    });
+    
     return <Segment className="secondary">
       
       <Segment>
@@ -29,54 +36,16 @@ Population = React.createClass({
       
         <Table className="very basic">
           <tbody>
-            <tr>
+            {statuses.map((status) => {
+              return <tr key={status.name}>
               <td className="collapsing">
-                Happiness
+                {U.labelify(status.name)}
               </td>
               <td>
-                <Progress init={{percent: 22}} className="indicating" />
+                <Progress init={{percent: status.value}} className="indicating" />
               </td>
             </tr>
-            <tr>
-              <td className="collapsing">
-                Health
-              </td>
-              <td>
-                <Progress init={{percent: 22}} className="indicating" />
-              </td>
-            </tr>
-            <tr>
-              <td className="collapsing">
-                Hunger
-              </td>
-              <td>
-                <Progress init={{percent: 22}} className="indicating" />
-              </td>
-            </tr>
-            <tr>
-              <td className="collapsing">
-                Loyalty
-              </td>
-              <td>
-                <Progress init={{percent: 22}} className="indicating" />
-              </td>
-            </tr>
-            <tr>
-              <td className="collapsing">
-                Equality
-              </td>
-              <td>
-                <Progress init={{percent: 22}} className="indicating" />
-              </td>
-            </tr>
-            <tr>
-              <td className="collapsing">
-                Prosperity
-              </td>
-              <td>
-                <Progress init={{percent: 22}} className="indicating" />
-              </td>
-            </tr>
+            })}
           </tbody>
         </Table>
       </Segment>

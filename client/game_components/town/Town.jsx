@@ -46,15 +46,15 @@ TownView = React.createClass({
       </TabMenu>
       
       <TabContent tab="Population" active={true}>
-        <Population />
+        <Population {...this.props} />
       </TabContent>
       
       <TabContent tab="Development">
-        <Development />
+        <Development {...this.props} />
       </TabContent>
       
       <TabContent tab="Law">
-        <LawAndPolicy />
+        <LawAndPolicy {...this.props} />
       </TabContent>
       
     </div>;
