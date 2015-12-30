@@ -9,6 +9,10 @@ Mixins.classGenerator = {
     let classes = defaultClass;
     
     classes += props.className ? ` ${props.className} `: "";
+    
+    if (props.color) {
+      classes += " " + props.color;
+    }
 
     if (typeof addClassName !== 'undefined') {
       if (typeof addClassName === 'object') {

@@ -13,24 +13,40 @@ Input = React.createClass({
   handleChange (e) {
       let value = e.target.value;
       let name = this.props.name;
-      
-      console.log(name, value, "in put component");
+
       if (this.props.onChange) {
-        this.props.onChange(name, value, e.target, e);
+        this.props.onChange(name, value, e);
       }
   },
   
   render() {
-    let props = this.props;
+    let {
+      label,
+      name,
+      placeholder,
+      type,
+      ...other
+    } = this.props;
+    
+    if (!type) {
+      type = "text";
+    }
     
     return (
       <div>
-        <label>{props.label}</label>
-        <input
-            type="text"
-            name={props.name}
+        <label>{label}</label>
+        {type === "textarea" ?
+          <textarea
+            {...other}
+            name={name}
+            onChange={this.handleChange} /> :
+          <input
+            {...other}
+            type={type}
+            name={name}
             onChange={this.handleChange}
-            placeholder={props.placeholder} />
+            placeholder={placeholder} />
+        }
       </div>
     );
   }

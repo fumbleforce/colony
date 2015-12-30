@@ -2,10 +2,14 @@ Form = React.createClass({
   mixins: [Mixins.classGenerator],
   
   render() {
-    let props = this.props;
+    let {
+      children,
+      className,
+      ...others
+    } = this.props;
     
-    return <form className={this.getClasses("ui", "form")}>
-      {this.props.children}
+    return <form {...others} className={this.getClasses("ui", "form")}>
+      {children}
     </form>;
   }
 });

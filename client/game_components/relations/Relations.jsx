@@ -63,11 +63,11 @@ Relations = React.createClass({
           </TabContent>
           
           <TabContent tab="Friends">
-            <Friends />
+            <Friends data={this.props.data} />
           </TabContent>
           
           <TabContent tab="Ignored">
-            <Ignored />
+            <Ignored data={this.props.data} />
           </TabContent>
                   
         </Column>

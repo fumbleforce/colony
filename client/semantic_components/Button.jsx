@@ -7,9 +7,9 @@ Button = React.createClass({
       ...others
     } = this.props;
     
-    return <div {...others} className={this.getClasses("ui", "button")}>
+    return <button {...others} className={this.getClasses("ui", "button")}>
       {this.props.children}
-    </div>;
+    </button>;
   }
 });
 

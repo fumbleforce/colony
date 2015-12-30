@@ -6,8 +6,10 @@ Friends = React.createClass({
   },
   
   getMeteorData() {
+    let user = Meteor.user();
+    
     return {
-      
+      friends: user && user.friends
     }
   },
   
@@ -17,50 +19,66 @@ Friends = React.createClass({
     }
   },
   
+  render() {
+    let {
+      friends
+    } = this.data;
+    
+    return (
+       <List className="divided">
+        {friends && friends.map((friend) => {
+          return <FriendItem key={friend.username} friend={friend} />
+        })}
+      </List>
+    );
+  }
+});
+
+FriendItem = React.createClass({
+  getInitialState() {
+    return {
+      sendLetter: false
+    }
+  },
+  
+  toggleSendLetter () {
+    this.setState({ sendLetter: !this.state.sendLetter });
+  },
+  
+  renderNewLetter () {
+    if (this.state.sendLetter) {
+      return <NewLetter to={this.props.friend.username} done={this.toggleSendLetter} />
+    }
+  },
+  
   renderItemButtons () {
     return <Buttons>
-      <Button>Send letter</Button>
+      <Button color="green" onClick={this.toggleSendLetter}>
+        <i className="icon mail" />
+        Send letter
+      </Button>
       <Button>Set note</Button>
       <Button>Remove</Button>
     </Buttons>
   },
   
-  renderFriend (friend) {
-    return <Item
-      header={friend.name}
-      description={friend.note}
-      meta={"Added " + moment(friend.added).toString()}
-      right={this.renderItemButtons()} />
-  },
-  
   render() {
-    let friends = [
-      {
-        name: "Bob the friend",
-        added: new Date(),
-        note: "Nice buddy from the block"
-      },
-      {
-        name: "Bob the friend",
-        added: new Date(),
-        note: "Nice buddy from the block"
-      },
-      {
-        name: "Bob the friend",
-        added: new Date(),
-        note: "Nice buddy from the block"
-      },
-    ];
+    let friend = this.props.friend;
     
-    
-    return (
-      <div>
-         <List className="divided">
-          {friends.map((friend) => {
-            return this.renderFriend(friend);
-          })}
-        </List>
-      </div>
-    );
+    if (this.state.sendLetter) {
+      return <Item
+        key={friend.username}
+        header={friend.username}
+        description={this.renderNewLetter}
+        meta={"Added " + moment(friend.added).toString()}
+        right={this.renderItemButtons()} />
+    } else {
+      return <Item
+        key={friend.username}
+        header={friend.username}
+        description={friend.note}
+        meta={"Added " + moment(friend.added).toString()}
+        right={this.renderItemButtons()} />
+    }
   }
 });
