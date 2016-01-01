@@ -1,25 +1,4 @@
 TownView = React.createClass({
-  mixins: [ReactMeteorData],
-  
-  propTypes: {
-
-  },
-  
-  getMeteorData() {
-    return {
-      
-    }
-  },
-  
-  getInitialState() {
-    return {
-
-    }
-  },
-  
-  componentDidMount() {
-      
-  },
   
   render() {
     return <div>
@@ -43,18 +22,28 @@ TownView = React.createClass({
             </i>
             Law and Policy
         </Tab>
+        <Tab tab="budget">
+            <i className="icon">
+              <Icon icon="brick-pile" size="tiny" />
+            </i>
+            Budget
+        </Tab>
       </TabMenu>
       
       <TabContent tab="Population" active={true}>
-        <Population {...this.props} />
+        <Population />
       </TabContent>
       
       <TabContent tab="Development">
-        <Development {...this.props} />
+        <Development />
       </TabContent>
       
       <TabContent tab="Law">
-        <LawAndPolicy {...this.props} />
+        <LawAndPolicy />
+      </TabContent>
+      
+      <TabContent tab="budget">
+        <Budget />
       </TabContent>
       
     </div>;

@@ -52,17 +52,21 @@ Slider = React.createClass({
   },
   
   getInitialState: function() {
-    return { value: 50 };
+    return { value: this.props.value };
   },
   
   handleInput (e) {
-    console.log(e.target.value);
-    this.setState({ value: e.target.value });
+    let value = +e.target.value;
+    this.setState({ value });
+    
+    if (this.props.onChange) {
+      this.props.onChange(this.props.name, value);
+    }
   },
   
   render() {
     let props = this.props;
-    let value = this.state.value;
+    let defaultValue = this.props.value;
     let valueStyle = {
       "marginLeft": "10px",
       "verticalAlign": "super"
@@ -80,17 +84,31 @@ Slider = React.createClass({
         </Column>
         <Column>
           <div className={this.getClasses("ui", "range slider")}>
-            <input style={rangeStyle} type="range" defaultValue={value} min={props.min} max={props.max} step={props.step} onInput={this.handleInput}/>
+            <input
+              style={rangeStyle}
+              type="range"
+              defaultValue={defaultValue}
+              min={props.min}
+              max={props.max}
+              step={props.step}
+              onInput={this.handleInput}/>
           </div>
         </Column>
         <Column>
-            <span style={valueStyle}>{value} {props.postfix}</span>
+            <span style={valueStyle}>{this.state.value} {props.postfix}</span>
         </Column>
       </Grid>
     }
     
     return <div className={this.getClasses("ui", "range slider")}>
-      <input type="range" defaultValue={value} min={props.min} max={props.max} step={props.step} onInput={this.handleInput}/>
+      <input
+        type="range"
+        name={props.name}
+        defaultValue={value}
+        min={props.min}
+        max={props.max}
+        step={props.step}
+        onInput={this.handleInput}/>
       <span style={valueStyle}>{value} {props.postfix}</span>
     </div>;
   }

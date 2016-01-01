@@ -43,7 +43,7 @@ MainLayout = React.createClass({
   renderCreateTown (){
     return <div className="body-container">
       <div className="body-content">
-        <main className="">
+        <main>
           <NewTown />
         </main>
       </div>
@@ -52,17 +52,17 @@ MainLayout = React.createClass({
   
   renderGameLayout () {
     let data = this.data;
-    let content = React.cloneElement(this.props.content, { data });
+    let content = this.props.content;
     
     return <div className="body-container">
       <div className="body-sidebar">
-        <Status data={this.data} />
+        <Status />
       </div>
       
       <div className="body-content">
         <Header />
         
-        <main className="">
+        <main>
           {content}
         </main>
         

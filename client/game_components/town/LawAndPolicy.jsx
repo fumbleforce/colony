@@ -7,7 +7,7 @@ LawAndPolicy = React.createClass({
   
   getMeteorData() {
     return {
-      
+      town: Town.get()
     }
   },
   
@@ -22,9 +22,13 @@ LawAndPolicy = React.createClass({
   },
   
   render() {
+    let town = this.data.town || {};
+    let policies = town.policies || {};
+    let budget = town.budget || {};
+    
     return <Segment className="basic">
       
-      <h2 className="ui header">Policies</h2>
+      <h1 className="ui header">Policies</h1>
       
       <List className="celled">
         <Policy name="Free the slaves" description="Productivity -50%" />
@@ -33,34 +37,7 @@ LawAndPolicy = React.createClass({
         
       </List>
       
-      <h2 className="ui header">Revenue</h2>
-      <List className="divided">
-        <Item>
-            <Slider inline={true} label="Tax rate" min={0} max={100} postfix="%" />
-        </Item>
-        <Item>
-            <Slider inline={true} label="Trade tariff" min={0} max={100} postfix="%" />
-        </Item>
-        
-      </List>
       
-      
-      <h2 className="ui header">Expense</h2>
-      <List className="divided">
-        <Item>
-            <Slider inline={true} label="Police" min={0} max={100} postfix="%" />
-        </Item>
-        <Item>
-            <Slider inline={true} label="Infrastructure" min={0} max={100} postfix="%" />
-        </Item>
-        <Item>
-            <Slider inline={true} label="Military" min={0} max={100} postfix="%" />
-        </Item>
-        <Item>
-            <Slider inline={true} label="Administration" min={0} max={100} postfix="%" />
-        </Item>
-        
-      </List>
           
     </Segment>;
   }

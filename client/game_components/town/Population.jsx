@@ -1,33 +1,41 @@
 Population = React.createClass({
   mixins: [ReactMeteorData],
   
-  propTypes: {
-
-  },
-  
   getMeteorData() {
     return {
-      
+      town: Town.get()
     }
-  },
-  
-  getInitialState() {
-    return {
-
-    }
-  },
-  
-  componentDidMount() {
-      
   },
   
   render() {
-    console.log(this.props);
-    let town = this.props.data.town;
+    let town = this.data.town;
     
     let statuses = _.map(town.populationStatus, (value, name) => {
       return { name, value };
     });
+    
+    let professions = [
+      {
+        name: "Explorers",
+        number: 9
+      },
+      {
+        name: "Milita",
+        number: 200
+      },
+      {
+        name: "Crafters",
+        number: 45
+      },
+      {
+        name: "Traders",
+        number: 16
+      },
+      {
+        name: "Laborers",
+        number: 300
+      },
+    ]
     
     return <Segment className="secondary">
       
@@ -55,38 +63,16 @@ Population = React.createClass({
           <h4>Professions</h4>
           <Table className="very basic">
             <tbody>
-              <tr>
-               <td>
-                Settlers
+              {professions.map((profession) => {
+                return <tr key={profession.name}>
+                <td className="collapsing">
+                  {U.labelify(profession.name)}
                 </td>
                 <td>
-                 {1200}
+                  {U.number(profession.number)}
                 </td>
               </tr>
-              <tr>
-               <td>
-                Explorers
-                </td>
-                <td>
-                 {10}
-                </td>
-              </tr>
-              <tr>
-               <td>
-                Militiamen
-                </td>
-                <td>
-                 {1500}
-                </td>
-              </tr>
-              <tr>
-               <td>
-                Traders
-                </td>
-                <td>
-                 {200}
-                </td>
-              </tr>
+              })}
             </tbody>
           </Table>
         </Column>

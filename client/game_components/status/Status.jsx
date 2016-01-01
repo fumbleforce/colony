@@ -3,10 +3,18 @@ Status = React.createClass({
   mixins: [ReactMeteorData],
   
   getMeteorData() {
+    let town = Town.get();
+    let townId = town && town._id;
     let processes = [];
+    let processSub = Meteor.subscribe("processes");
+    
+    if (processSub.ready()) {
+      processes = Process.find({ townId }).fetch();
+    }
     
     return {
-      processes
+      processes,
+      town
     }
   },
   
@@ -22,14 +30,9 @@ Status = React.createClass({
     };
     
     let {
-      currentUser,
-      towns,
-    } = this.props.data;
-    
-    let town = towns[0];
-    
-    let processes = this.data.processes;
-    
+      town,
+      processes
+    } = this.data;
     
     return <div style={style}>
       
@@ -110,16 +113,25 @@ Status = React.createClass({
       
       <h3 className="ui header">Production</h3>
       <Grid className="two column">
-        {processes.map((process) => {
-          return <Row>
-              <Column>
-                <Icon icon="anvil" size="tiny" /> {U.labelify(process.profession)}
-              </Column>
-              <Column>
-                <Progress init={{ percent: town.getCraftingProgress(process.profession)}} />
-              </Column>
-          </Row>;
-        })}
+        {processes.length ?
+          processes.map((process) => {
+            return <Row key={process._id} style={{ padding: "0.2em" }}>
+                <Column>
+                  <Icon icon="anvil" size="tiny" />
+                  {U.labelify(process.profession)}
+                </Column>
+                <Column>
+                  <Progress
+                    className="indicating small"
+                    style={{ marginTop: "5px" }}
+                    init={true}
+                    showTimeRemaining={true}
+                    timeFrom={process.createdAt}
+                    timeTo={process.finished} />
+                </Column>
+            </Row>
+          }) : <Row><Column>No active process</Column></Row>
+        }
       </Grid>
       
       <h3 className="ui header">Militia</h3>

@@ -4,11 +4,21 @@ Meteor.publish("towns", function () {
     return Town.find({ userId });
 });
 
+Meteor.publish("processes", function () {
+    let townId = Town.findOne({ userId: this.userId })._id;
+    return Process.find({ townId });
+});
+
 Meteor.publish("userSearch", function (username) {
     check(username, String);
     
+    let user = User.findOne(this.userId);
+    let ignored = _.pluck(user.ignored, "username");
     return Meteor.users.find({
-        username: { $in: [ new RegExp(username, "g") ] }
+        $and: [
+            { username: { $not: { $in: ignored } } },
+            { username: { $in: [ new RegExp(username, "g") ] } }
+        ]
     }, {
         limit: 10,
         fields: {

@@ -24,6 +24,10 @@ Friends = React.createClass({
       friends
     } = this.data;
     
+    if (!friends.length) {
+      return <p>You have no friends yet :(</p>
+    }
+    
     return (
        <List className="divided">
         {friends && friends.map((friend) => {
@@ -35,41 +39,34 @@ Friends = React.createClass({
 });
 
 FriendItem = React.createClass({
-  getInitialState() {
-    return {
-      sendLetter: false
-    }
-  },
+  mixins: [Mixins.InlineNewLetter],
   
-  toggleSendLetter () {
-    this.setState({ sendLetter: !this.state.sendLetter });
-  },
-  
-  renderNewLetter () {
-    if (this.state.sendLetter) {
-      return <NewLetter to={this.props.friend.username} done={this.toggleSendLetter} />
-    }
+  removeFriend () {
+    let user = Meteor.user();
+    let friend = this.props.friend;
+    console.log("Removing frined", friend);
+    user.removeFriend(friend.username);
+    user.save();
   },
   
   renderItemButtons () {
     return <Buttons>
-      <Button color="green" onClick={this.toggleSendLetter}>
+      <Button color="green" onClick={this.toggleInlineNewLetter}>
         <i className="icon mail" />
         Send letter
       </Button>
-      <Button>Set note</Button>
-      <Button>Remove</Button>
+      <Button onClick={this.removeFriend}>Remove</Button>
     </Buttons>
   },
   
   render() {
     let friend = this.props.friend;
     
-    if (this.state.sendLetter) {
+    if (this.state.inlineNewLetter) {
       return <Item
         key={friend.username}
         header={friend.username}
-        description={this.renderNewLetter}
+        description={this.renderNewLetter(friend.username)}
         meta={"Added " + moment(friend.added).toString()}
         right={this.renderItemButtons()} />
     } else {

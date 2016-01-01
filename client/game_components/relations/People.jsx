@@ -18,10 +18,10 @@ People = React.createClass({
       let handle = Meteor.subscribe("userSearch", state.usernameSearch);
       
       if (handle.ready()) {
-        
+        let ignored = [Meteor.user().username].concat(_.pluck(Meteor.user().ignored, "username"));
         results = Meteor.users.find({
           $and: [
-            { username: { $not: { $in: [Meteor.user().username] } } },
+            { username: { $not: { $in: ignored } } },
             { username: { $in: [ new RegExp(state.usernameSearch, "g") ] } }
           ]
         }).fetch();
@@ -37,13 +37,10 @@ People = React.createClass({
   getInitialState() {
     return {
       usernameSearch: false,
-      newLetter: false,
     }
   },
   
-  toggleNewLetter () {
-    this.setState({ newLetter: !this.state.newLetter });
-  },
+  
   
   handleSearch (name, value) {
     console.log("Setting search to", value);
@@ -84,15 +81,7 @@ People = React.createClass({
 });
 
 PersonItem = React.createClass({
-  getInitialState() {
-    return {
-      sendLetter: false
-    }
-  },
-  
-  toggleSendLetter () {
-    this.setState({ sendLetter: !this.state.sendLetter });
-  },
+  mixins: [Mixins.InlineNewLetter],
   
   addFriend () {
     let user = Meteor.user();
@@ -106,42 +95,53 @@ PersonItem = React.createClass({
     user.save();
   },
   
-  
-  
   renderButtons () {
-    return <Buttons className="mini">
-      <Button color="green" onClick={this.toggleSendLetter}>
+    let user = Meteor.user();
+    let isFriend = user.isFriend(this.props.user.username);
+    let isIgnored = user.isIgnored(this.props.user.username);
+    
+    return <Buttons>
+      <Button color="green" onClick={this.toggleInlineNewLetter}>
         <i className="icon mail" />
         Send letter
       </Button>
+      {!isFriend ?
       <Button color="green" onClick={this.addFriend}>
         <i className="icon user" />
         Add friend
       </Button>
+      :
+      <Button color="green" disabled>
+        <i className="icon user" />
+        Friend
+      </Button>
+      }
+      {!isIgnored ?
       <Button color="red" onClick={this.ignorePerson}>
         <i className="icon ban" />
         Ignore
       </Button>
+      :
+      <Button color="red" disabled>
+        <i className="icon ban" />
+        Ignored
+      </Button>
+      }
     </Buttons>
-  },
-  
-  renderNewLetter () {
-    if (this.state.sendLetter) {
-      return <NewLetter to={this.props.user.username} done={this.toggleSendLetter} />
-    }
   },
   
   render() {
     let user = this.props.user;
-    
-    if (this.state.sendLetter) {
+
+    if (this.state.inlineNewLetter) {
       return <Item
         header={user.username}
         right={this.renderButtons()}
-        description={this.renderNewLetter()} />
+        description={this.renderNewLetter(user.username)} />
     } else {
       return <Item
         header={user.username}
+        description="Town unknown"
         right={this.renderButtons()} />
     }
   }

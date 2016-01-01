@@ -1,42 +1,56 @@
 Ignored = React.createClass({
   mixins: [ReactMeteorData],
   
-  propTypes: {
-
-  },
-  
-  getMeteorData() {
+  getMeteorData () {
+    let user = Meteor.user();
+    
     return {
-      
+      ignored: user && user.ignored
     }
   },
   
-  getInitialState() {
-    return {
-
+  render() {
+    let ignoredPeople = this.data.ignored;
+    
+    if (!ignoredPeople.length) {
+      return <p>You love everyone!</p>
     }
+    
+    return (
+      <List className="divided">
+        {ignoredPeople && ignoredPeople.map((ignored) => {
+          return <IgnoredItem key={ignored.username} ignored={ignored} />
+        })}
+      </List>
+    );
+  }
+});
+
+
+IgnoredItem = React.createClass({
+  
+  removeIgnored () {
+    let user = Meteor.user();
+    let ignored = this.props.ignored;
+    
+    user.removeIgnored(ignored.username);
+    user.save();
   },
   
   renderItemButtons () {
     return <Buttons>
-      <Button>Remove</Button>
-    </Buttons>;
+      <Button onClick={this.removeIgnored}>Remove</Button>
+    </Buttons>
   },
-  
+
   render() {
-    return (
-      <div>
-      
-        <List className="divided">
-          <Item header="Bob the nagger" description="Ignored 1/12/2015" right={this.renderItemButtons()} />
-          <Item header="Joe the nagger" description="Ignored 1/12/2015" right={this.renderItemButtons()} />
-          <Item header="Shmoe the nagger" description="Ignored 1/12/2015" right={this.renderItemButtons()} />
-          <Item header="xXNighght_DKXx the nagger" description="Ignored 1/12/2015" right={this.renderItemButtons()} />
-          <Item header="Ape the nagger" description="Ignored 1/12/2015" right={this.renderItemButtons()} />
-            
-        </List>
-      
-      </div>
-    );
+    let ignored = this.props.ignored;
+    
+    return <Item
+      key={ignored.username}
+      header={ignored.username}
+      description={ignored.note}
+      meta={"Added " + moment(ignored.added).toString()}
+      right={this.renderItemButtons()} />
   }
 });
