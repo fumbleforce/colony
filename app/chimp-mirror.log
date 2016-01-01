@@ -1,0 +1,402 @@
+[[[[[ ~/repo/colony/app ]]]]]
+
+=> Started proxy.
+=> Errors prevented startup:
+   
+   While preparing to run:
+   settings.json: file not found (settings file)
+   
+=> Your application has errors. Waiting for file change.
+=> Modified -- restarting.
+[34mW20160101-23:07:32.444(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:07:32.446(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:07:32.446(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:07:32.446(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:07:32.446(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:07:32.446(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:07:32.447(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:07:32.447(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:07:32.447(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:07:32.447(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:07:32.447(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:07:32.447(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:07:32.447(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:07:32.448(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:07:32.448(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:07:32.448(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:07:32.448(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:07:32.448(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:07:32.448(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:07:32.448(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:07:32.449(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:07:32.449(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:07:32.449(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:07:32.449(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+[34mW20160101-23:07:41.948(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:07:41.950(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:07:41.950(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:07:41.950(1)? (STDERR) [39m[35m						      ^[39m
+=> Exited with code: 8
+[34mW20160101-23:07:42.054(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:07:42.054(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:07:42.055(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:07:42.055(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:07:42.055(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:07:42.055(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:07:42.055(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:07:42.056(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:07:42.056(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:07:42.056(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:07:42.057(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:07:42.057(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:07:42.057(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:07:42.057(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:07:42.057(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:07:42.057(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:07:42.057(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:07:42.058(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:07:42.058(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:07:42.059(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+[34mW20160101-23:07:51.619(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:07:51.620(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:07:51.620(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:07:51.620(1)? (STDERR) [39m[35m						      ^[39m
+=> Exited with code: 8
+=> Your application is crashing. Waiting for file change.
+[34mW20160101-23:07:51.722(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:07:51.723(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:07:51.723(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:07:51.723(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:07:51.723(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:07:51.723(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:07:51.723(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:07:51.724(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:07:51.724(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:07:51.724(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:07:51.724(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:07:51.724(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:07:51.725(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:07:51.725(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:07:51.726(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:07:51.726(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:07:51.726(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:07:51.726(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:07:51.726(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:07:51.726(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+[[[[[ ~/repo/colony/app ]]]]]
+
+=> Started proxy.
+[34mW20160101-23:16:47.717(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:16:47.718(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:16:47.719(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:16:47.719(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:16:47.719(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:16:47.719(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:16:47.719(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:16:47.719(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:16:47.719(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:16:47.719(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:16:47.720(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:16:47.720(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:16:47.720(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:16:47.720(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:16:47.720(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:16:47.720(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:16:47.720(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:16:47.720(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:16:47.721(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:16:47.721(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:16:47.721(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:16:47.721(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:16:47.721(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:16:47.721(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+[34mW20160101-23:17:00.294(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:17:00.296(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:17:00.296(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:17:00.296(1)? (STDERR) [39m[35m						      ^[39m
+=> Exited with code: 8
+[34mW20160101-23:17:00.411(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:17:00.412(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:17:00.412(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:17:00.412(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:17:00.412(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:17:00.412(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:17:00.412(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:17:00.412(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:17:00.413(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:17:00.413(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:17:00.413(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:17:00.413(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:17:00.413(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:17:00.413(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:17:00.413(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:17:00.413(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:17:00.414(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:17:00.414(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:17:00.414(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:17:00.414(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+[34mW20160101-23:17:12.720(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:17:12.722(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:17:12.722(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:17:12.722(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:17:12.838(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:17:12.839(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:17:12.839(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:17:12.839(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:17:12.839(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:17:12.839(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:17:12.839(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:17:12.839(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:17:12.840(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:17:12.840(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:17:12.840(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:17:12.840(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:17:12.840(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:17:12.840(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:17:12.841(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:17:12.841(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:17:12.841(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:17:12.841(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:17:12.841(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:17:12.841(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+=> Your application is crashing. Waiting for file change.
+[[[[[ ~/repo/colony/app ]]]]]
+
+=> Started proxy.
+[34mW20160101-23:18:57.412(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:18:57.414(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:18:57.415(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:18:57.415(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:18:57.415(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:18:57.415(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:18:57.416(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:18:57.416(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:18:57.416(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:18:57.416(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:18:57.416(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:18:57.416(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:18:57.417(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:18:57.417(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:18:57.417(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:18:57.417(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:18:57.417(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:18:57.418(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:18:57.418(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:18:57.418(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:18:57.418(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:18:57.418(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:18:57.418(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:18:57.419(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+[34mW20160101-23:19:07.463(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:19:07.466(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:19:07.466(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:19:07.466(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:19:07.572(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:19:07.572(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:19:07.572(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:19:07.572(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:19:07.572(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:19:07.572(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:19:07.572(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:19:07.572(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:19:07.573(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:19:07.574(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:19:07.574(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+[34mW20160101-23:19:18.298(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:19:18.299(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:19:18.299(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:19:18.299(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:19:18.408(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:19:18.408(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:19:18.409(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:19:18.410(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:19:18.410(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:19:18.410(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:19:18.410(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:19:18.410(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:19:18.410(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:19:18.410(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:19:18.411(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:19:18.411(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+=> Your application is crashing. Waiting for file change.
+[[[[[ ~/repo/colony/app ]]]]]
+
+=> Started proxy.
+[34mW20160101-23:21:51.391(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:21:51.394(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:21:51.394(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:21:51.394(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:21:51.394(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:21:51.394(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:21:51.395(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:21:51.395(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:21:51.395(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:21:51.395(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:21:51.395(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:21:51.395(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:21:51.396(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:21:51.396(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:21:51.396(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:21:51.396(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:21:51.396(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:21:51.396(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:21:51.396(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:21:51.397(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:21:51.397(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:21:51.397(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:21:51.397(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:21:51.397(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+[34mW20160101-23:22:01.607(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:22:01.608(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:22:01.608(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:22:01.608(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:22:01.721(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:22:01.722(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:22:01.722(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:22:01.722(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:22:01.722(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:22:01.722(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:22:01.722(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:22:01.722(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:22:01.722(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:22:01.723(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:22:01.724(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+[34mW20160101-23:22:11.536(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:22:11.538(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:22:11.538(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:22:11.538(1)? (STDERR) [39m[35m						      ^[39m
+=> Exited with code: 8
+=> Your application is crashing. Waiting for file change.
+[34mW20160101-23:22:11.648(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:22:11.648(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:22:11.648(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:22:11.649(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:22:11.649(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:22:11.649(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:22:11.649(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:22:11.649(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:22:11.649(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:22:11.650(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:22:11.650(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:22:11.650(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:22:11.650(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:22:11.650(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:22:11.651(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:22:11.651(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:22:11.651(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:22:11.651(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:22:11.651(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:22:11.651(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+[[[[[ ~/repo/colony/app ]]]]]
+
+=> Started proxy.
+[34mW20160101-23:23:00.684(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:23:00.685(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m						      ^[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:23:00.686(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:23:00.687(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:23:00.688(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:23:00.688(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+=> Exited with code: 8
+[34mW20160101-23:23:11.608(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:23:11.611(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:23:11.611(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:23:11.611(1)? (STDERR) [39m[35m						      ^[39m
+=> Exited with code: 8
+[34mW20160101-23:23:11.729(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:23:11.729(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:23:11.729(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:23:11.729(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:23:11.730(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:23:11.730(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:23:11.730(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:23:11.730(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:23:11.730(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:23:11.731(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:23:11.731(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:23:11.731(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:23:11.731(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:23:11.731(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:23:11.731(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:23:11.731(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:23:11.732(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:23:11.732(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:23:11.732(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:23:11.732(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
+[34mW20160101-23:23:22.293(1)? (STDERR) [39m[35m[39m
+[34mW20160101-23:23:22.294(1)? (STDERR) [39m[35m/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:278[39m
+[34mW20160101-23:23:22.294(1)? (STDERR) [39m[35m						throw(ex);[39m
+[34mW20160101-23:23:22.294(1)? (STDERR) [39m[35m						      ^[39m
+=> Exited with code: 8
+=> Your application is crashing. Waiting for file change.
+[34mW20160101-23:23:22.402(1)? (STDERR) [39m[35mError: failed to connect to [localhost:27017][39m
+[34mW20160101-23:23:22.402(1)? (STDERR) [39m[35m    at Object.Future.wait (/home/jorgen/.meteor/packages/meteor-tool/.1.1.10.1m5cd35++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/server-lib/node_modules/fibers/future.js:398:15)[39m
+[34mW20160101-23:23:22.403(1)? (STDERR) [39m[35m    at new MongoConnection (packages/mongo/mongo_driver.js:213:1)[39m
+[34mW20160101-23:23:22.403(1)? (STDERR) [39m[35m    at new MongoInternals.RemoteCollectionDriver (packages/mongo/remote_collection_driver.js:4:1)[39m
+[34mW20160101-23:23:22.403(1)? (STDERR) [39m[35m    at Object.<anonymous> (packages/mongo/remote_collection_driver.js:38:1)[39m
+[34mW20160101-23:23:22.403(1)? (STDERR) [39m[35m    at Object.defaultRemoteCollectionDriver (packages/underscore/packages/underscore.js:779:1)[39m
+[34mW20160101-23:23:22.403(1)? (STDERR) [39m[35m    at new Mongo.Collection (packages/mongo/collection.js:102:1)[39m
+[34mW20160101-23:23:22.403(1)? (STDERR) [39m[35m    at AccountsServer.AccountsCommon (accounts_common.js:23:18)[39m
+[34mW20160101-23:23:22.404(1)? (STDERR) [39m[35m    at new AccountsServer (accounts_server.js:16:5)[39m
+[34mW20160101-23:23:22.404(1)? (STDERR) [39m[35m    at Package (globals_server.js:5:12)[39m
+[34mW20160101-23:23:22.404(1)? (STDERR) [39m[35m    at /home/jorgen/repo/colony/app/.meteor/local/build/programs/server/packages/accounts-base.js:1814:4[39m
+[34mW20160101-23:23:22.405(1)? (STDERR) [39m[35m    - - - - -[39m
+[34mW20160101-23:23:22.405(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/server.js:556:74)[39m
+[34mW20160101-23:23:22.405(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:106:17)[39m
+[34mW20160101-23:23:22.405(1)? (STDERR) [39m[35m    at [object Object].<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection_pool.js:156:15)[39m
+[34mW20160101-23:23:22.406(1)? (STDERR) [39m[35m    at [object Object].emit (events.js:98:17)[39m
+[34mW20160101-23:23:22.406(1)? (STDERR) [39m[35m    at Socket.<anonymous> (/home/jorgen/.meteor/packages/npm-mongo/.1.4.39_1.173ct80++os+web.browser+web.cordova/npm/node_modules/mongodb/lib/mongodb/connection/connection.js:534:10)[39m
+[34mW20160101-23:23:22.406(1)? (STDERR) [39m[35m    at Socket.emit (events.js:95:17)[39m
+[34mW20160101-23:23:22.406(1)? (STDERR) [39m[35m    at net.js:441:14[39m
+[34mW20160101-23:23:22.406(1)? (STDERR) [39m[35m    at process._tickCallback (node.js:448:13)[39m
