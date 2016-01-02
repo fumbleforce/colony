@@ -29,13 +29,8 @@ Sidebar = React.createClass({
       "top": "0px"
     };
     
-    return <div className="">
-      
+    return <div className="ui pushing sidebar visible small screen only">
       <Status />
-    
-      
-      
-      
     </div>;
   }
 });

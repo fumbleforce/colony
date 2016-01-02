@@ -54,6 +54,7 @@ People = React.createClass({
         <Form>
           <Field>
             <Input
+              id="username-search"
               name="usernameSearch"
               label="Search name"
               icon="search"
@@ -101,12 +102,12 @@ PersonItem = React.createClass({
     let isIgnored = user.isIgnored(this.props.user.username);
     
     return <Buttons>
-      <Button color="green" onClick={this.toggleInlineNewLetter}>
+      <Button id="send-letter" color="green" onClick={this.toggleInlineNewLetter}>
         <i className="icon mail" />
         Send letter
       </Button>
       {!isFriend ?
-      <Button color="green" onClick={this.addFriend}>
+      <Button id="add-friend" color="green" onClick={this.addFriend}>
         <i className="icon user" />
         Add friend
       </Button>
@@ -117,7 +118,7 @@ PersonItem = React.createClass({
       </Button>
       }
       {!isIgnored ?
-      <Button color="red" onClick={this.ignorePerson}>
+      <Button id="ignore-person" color="red" onClick={this.ignorePerson}>
         <i className="icon ban" />
         Ignore
       </Button>
@@ -135,11 +136,13 @@ PersonItem = React.createClass({
 
     if (this.state.inlineNewLetter) {
       return <Item
+        className="person-item"
         header={user.username}
         right={this.renderButtons()}
         description={this.renderNewLetter(user.username)} />
     } else {
       return <Item
+        className="person-item"
         header={user.username}
         description="Settlement unknown"
         right={this.renderButtons()} />

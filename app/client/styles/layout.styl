@@ -16,6 +16,8 @@ main
   -ms-flex-direction: row;
   flex-direction: row;
   
+  transition: all 0.5s linear
+  
   .body-sidebar
     background: #fff
     border-right: 1px solid #d4d4d5;
@@ -26,7 +28,7 @@ main
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    
+    transition: all 0.5s linear
     
     
   .body-content
@@ -34,4 +36,46 @@ main
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    min-width: 0px; 
+    min-width: 0px;
+    transition: all 0.5s linear
+
+.removed {
+  -webkit-animation: disapear 1s;
+  -webkit-animation-fill-mode: forwards; 
+  animation: disapear 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes disapear {
+  0% {
+    opacity: 1.0;
+  }
+  
+  99% {
+    width: 0px;
+    opacity: 0.0;
+  }
+  
+  100% {
+    display: none
+  }    
+}
+
+.slideout {
+  -webkit-animation: slide 0.2s ease;
+  -webkit-animation-fill-mode: forwards; 
+  animation: slide 0.2s eae;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+  0% {
+    bottom: -100%;
+    opacity: 0.0;
+  }
+  
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }    
+}

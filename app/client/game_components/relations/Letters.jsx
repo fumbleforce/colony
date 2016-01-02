@@ -70,11 +70,12 @@ Letters = React.createClass({
     let letters = this.data.letters;
     
     return <div>
-      <Button color="green" onClick={this.toggleNewLetter}>
+      <Button id="new-letter" color="green" onClick={this.toggleNewLetter}>
         <i className="icon mail" />
         New letter
       </Button>
       <Button
+        id="trash-letter"
         onClick={this.trashSelected}
         color="red"
         disabled={!this.state.selectedLetters.length}>
@@ -82,6 +83,7 @@ Letters = React.createClass({
         Trash
       </Button>
       <Button
+        id="archive-letter"
         disabled={!this.state.selectedLetters.length}
         onClick={this.archiveSelected}>
         <i className="icon mail" />
@@ -145,11 +147,12 @@ LetterItem = React.createClass({
     } = this.props;
     
     let selected = this.state.selected ? "active" : "";
+    let classes = selected +=" letter-item"
     
     return (
       <tr
         {...others}
-        className={selected}
+        className={classes}
         onClick={this.setSelected}>
         
         <td className="collapsing">

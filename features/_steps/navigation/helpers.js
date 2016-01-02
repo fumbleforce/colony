@@ -5,5 +5,7 @@ module.exports = function () {
     client.url(url.resolve(process.env.ROOT_URL, path));
   });
 
-  
+  this.Given(/^I navigate to the "([^"]*)" page$/, function (path) {
+    client.url(url.resolve(process.env.ROOT_URL, path));
+  });
 };

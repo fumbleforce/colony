@@ -14,6 +14,7 @@ MainLayout = React.createClass({
       loggedIn: !!Meteor.userId(),
       loggingIn: Meteor.loggingIn(),
       settlementCount,
+      sidebarOpen: Session.get("sidebarOpen")
     };
   },
   
@@ -40,12 +41,17 @@ MainLayout = React.createClass({
   
   renderGameLayout () {
     let content = this.props.content;
+    let sidebarOpen = this.data.sidebarOpen;
     
     return <div className="body-container">
       <span id="logged-in" />
       <span id="in-game" />
       
-      <div className="body-sidebar">
+      {sidebarOpen ? <div className="body-sidebar large screen hidden slideout">
+        <Status />
+      </div> : ""}
+      
+      <div className="body-sidebar large screen only">
         <Status />
       </div>
       

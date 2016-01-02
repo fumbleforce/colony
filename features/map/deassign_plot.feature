@@ -4,7 +4,6 @@ Feature: Deassign plot
   I want to deassign a plot
   So I can get the benefits of other plot-holders
   
-  @watch
   Scenario: Deassign plot when plots are assigned
     Given I am logged in with settlement
     When I navigate to the "/map" page
@@ -13,7 +12,6 @@ Feature: Deassign plot
     Then a plot is deassigned from militia
     And the plot count is still zero
   
-  @watch
   Scenario: Deassign plot when none are assigned
     Given I am logged in with settlement
     When I navigate to the "/map" page

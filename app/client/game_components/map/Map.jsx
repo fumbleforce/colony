@@ -83,7 +83,28 @@ MapPage = React.createClass({
             </Row>;
           })}
         </Grid>
-
+        
+        <Menu className="horizontal three item fluid labeled icon menu">
+          <Item type="link" >
+              <i className="icon">
+                <Icon icon="sawed-off-shotgun" size="small" />
+              </i>
+              Conquer a plot
+          </Item>
+          <Item type="link" >
+              <i className="icon">
+                <Icon icon="shaking-hands" size="small" />
+              </i>
+              Negotiate transfer of a plot
+          </Item>
+          <Item type="link" >
+              <i className="icon">
+                <Icon icon="swap-bag" size="small" />
+              </i>
+              Purchase a plot
+          </Item>
+          
+        </Menu>
       </div>
     );
   }

@@ -5,32 +5,40 @@ Navigation = React.createClass({
 
   },
   
-  getMeteorData() {
-    return {
-      
-    }
+  toggleSidebar () {
+    Session.set("sidebarOpen", !Session.get("sidebarOpen"));
   },
   
-  getInitialState() {
+  getMeteorData () {
+    
+    return {
+      sidebarOpen: Session.get("sidebarOpen")
+    };
+  },
+  
+  getInitialState () {
     return {
 
-    }
+    };
   },
   
-  componentDidMount() {
-      
+  componentDidMount () {
+    Session.set("sidebarOpen", false);
   },
   
   isActive (path) {
     return FlowRouter.current().path === path;
   },
   
-  render() {
+  render () {
     let style = {
       //"backgroundColor": "#efefef"
     };
     
     return <Menu style={style} className="horizontal fluid attached labeled icon navigation-menu">
+        <Item type="link" active={Session.get("sidebarOpen")} onClick={this.toggleSidebar} className="large screen hidden">
+            <i className="icon sidebar" style={{marginTop: "10px !important"}}></i>
+        </Item>
         <Item type="link" active={this.isActive("/settlement")} href="/settlement">
             <i className="icon rpg rpg-Icon5_72"></i>
             Settlement

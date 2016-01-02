@@ -24,7 +24,7 @@ BarracksPage = React.createClass({
   render() {
     return <div>
       
-      <Grid className="four column">
+      <Grid className="doubling three column">
         <Column>
           <Segment>
             <Statistics className="four mini horizontal">
@@ -87,7 +87,7 @@ BarracksPage = React.createClass({
       
       <h2 className="ui header">Army composition</h2>
       
-      <Grid className="six column center aligned">
+      <Grid className="five column doubling center aligned">
         <Column>
           <Statistic value="100" />
           <MilitiaUnit name="Infantry" inlineIcon="pikeman"></MilitiaUnit>

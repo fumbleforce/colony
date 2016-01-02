@@ -1,10 +1,13 @@
 module.exports = function () {
   this.Before(function () {
-    this.AuthenticationHelper = {
-      login: function () {
+    this.AuthHelper = {
+      login: function (username, password) {
+        username = username || "me@example.com";
+        password = password || "password";
+        
         client.waitForExist("#at-pwd-form");
-        client.setValue("#at-field-username_and_email", "me@example.com");
-        client.setValue("#at-field-password", "password");
+        client.setValue("#at-field-username_and_email", username);
+        client.setValue("#at-field-password", password);
         client.click("#at-btn");
         client.waitForExist("#logged-in");
       },

@@ -84,6 +84,7 @@ NewLetter = React.createClass({
           </Field>
           <Field>
             <Button
+              id="send-letter"
               onClick={this.handleSubmit}
               className="green large"
               type="submit">
