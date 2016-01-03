@@ -14,8 +14,27 @@ MapPage = React.createClass({
   },
   
   getInitialState () {
+    let radius = 4; 
+    let mapDict = {};
+    
+    _.each(_.range(-radius, radius + 1), (q) => {
+      let r1 = Math.max(-radius, -q - radius);
+      let r2 = Math.min(radius, -q + radius);
+      
+      _.each(_.range(r1, r2 + 1), (r) => {
+        var h = Hex(q, r, -q-r);
+        h.color = "#660000";
+        mapDict[Hex.ToKey(h)] = h;
+      });
+    });
+    
+    let map = U.valueList(mapDict);
+    
     return {
-
+      map,
+      radius,
+      mapDict,
+      scale: 1
     };
   },
   
@@ -25,6 +44,17 @@ MapPage = React.createClass({
   
   deassignPlot (holder) {
     Meteor.call("plots/deassign", holder);
+  },
+  
+  changeScale (name, value) {
+    this.setState({ scale: value });
+  },
+  
+  handleMapClick (hex, e) {
+    console.log("Clicked map", hex);
+    let mapDict = this.state.mapDict;
+    mapDict[Hex.ToKey(hex)].color = "#000";
+    this.setState({ mapDict });
   },
   
   render () {
@@ -44,8 +74,34 @@ MapPage = React.createClass({
       settlements: "red"
     };
     
+    let {
+      mapDict,
+      radius,
+      scale,
+      map,
+    } = this.state;
+    
     return (
       <div className="ui container">
+      
+        <Hexmap
+          width={800}
+          height={600}
+          radius={radius}
+          scale={scale}
+          orientation="pointy"
+          onClick={this.handleMapClick}
+          hexes={map} />
+          
+        <Slider
+          label="Scale"
+          name="scale"
+          value={scale}
+          inline={true}
+          onChange={this.changeScale}
+          min={0.2}
+          max={5}
+          step={0.01} />
         
         <Progress
           init={true}

@@ -1,10 +1,9 @@
-Feature: Regiter user
+Feature: Register user
 
   As a person
   I want to register a user
   So I can access the game
   
-  @focus
   Scenario: Registering a valid user
     Given I navigate to the "/" page
     When I click the register button

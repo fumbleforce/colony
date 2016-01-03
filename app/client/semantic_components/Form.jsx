@@ -76,7 +76,6 @@ Slider = React.createClass({
       "width": "100%"
     };
     
-    
     if (props.inline) {
       return <Grid className="three column">
         <Column>

@@ -39,7 +39,7 @@ momentjs:moment
 mquandalle:stylus
 numeral:numeral
 colony:fixtures
-
+colony:hexmap
 npm-container
 ongoworks:security
 xolvio:backdoor

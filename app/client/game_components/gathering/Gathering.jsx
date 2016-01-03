@@ -5,23 +5,33 @@ GatheringPage = React.createClass({
 
   },
   
-  getMeteorData() {
+  getMeteorData () {
+    let settlement = Settlement.get();
+    
+    
     return {
-      
-    }
+      settlement
+    };
   },
   
-  getInitialState() {
+  getInitialState () {
     return {
 
-    }
+    };
   },
   
-  componentDidMount() {
+  componentDidMount () {
       
   },
   
-  render() {
+  render () {
+    let settlement = this.data.settlement;
+    let plots = settlement.plots;
+    let gathering = settlement.gathering.plots;
+    let total = plots.breakdown.gathering;
+    let used = U.sumObj(gathering);
+    
+    
     return <div>
       
       <Grid className="two column">
@@ -30,21 +40,51 @@ GatheringPage = React.createClass({
             <h2 className="ui header">Plots</h2>
             
             <Statistics className="tiny">
-              <Statistic value="3 / 10" label="plots used" />
-              <Statistic value="289 / 300" label="settlers employed" />
+              <Statistic value={used + "/" + total} label="plots used" />
+              <Statistic value="x / y" label="settlers employed" />
             </Statistics>
           </Segment>
         
           <GatheringFacilities>
-            <GatheringFacility icon="spade" name="Fields" plots={3} rate={4} resource="grain" />
-            <GatheringFacility icon="wood-axe" name="Lumber camps" plots={1} rate={4} resource="log" />
-            <GatheringFacility icon="meat-cleaver" name="Pastures" plots={5} rate={3} resource="meat" />
-            <GatheringFacility icon="mining" name="Quarry" plots={0} rate={9} resource="stone" />
-            <GatheringFacility icon="gold-mine" name="Mine" plots={0} rate={9} resource="ore" />
+            <GatheringFacility
+              icon="spade"
+              name="Fields"
+              plots={gathering.fields}
+              rate={settlement.getResourceRate("fields")}
+              resource="grain" />
+            <GatheringFacility
+              icon="wood-axe"
+              name="Lumber camps"
+              plots={gathering.lumberCamps}
+              rate={settlement.getResourceRate("logs")}
+              resource="log" />
+            <GatheringFacility
+              icon="meat-cleaver"
+              name="Pastures"
+              plots={gathering.pastures}
+              rate={settlement.getResourceRate("pastures")}
+              resource="meat" />
+            <GatheringFacility
+              icon="mining"
+              name="Quarry"
+              plots={gathering.quarry}
+              rate={settlement.getResourceRate("quarry")}
+              resource="stone" />
+            <GatheringFacility
+              icon="gold-mine"
+              name="Mine"
+              plots={gathering.mine}
+              rate={settlement.getResourceRate("mine")}
+              resource="ore" />
           </GatheringFacilities>
         </Column>
         <Column>
-          <Segment style={{ "backgroundImage": "url(/images/hexes.png)", "height": "800px", "background-size": "cover" }}></Segment>
+          <Segment
+            style={{
+              "backgroundImage": "url(/images/hexes.png)",
+              "height": "800px",
+              "background-size": "cover"
+            }} />
         </Column>
       </Grid>
     </div>;

@@ -82,7 +82,7 @@ Progress = React.createClass({
     } else {
       style = defaultStyle;
     }
-    console.log("state percent", this.state.percent);
+
     let state = {
       active: this.getActive(),
       success: this.getSuccess(),
