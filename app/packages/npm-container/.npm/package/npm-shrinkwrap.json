@@ -160,9 +160,6 @@
     "react-semantify": {
       "version": "0.4.0",
       "dependencies": {
-        "classnames": {
-          "version": "2.2.1"
-        },
         "react": {
           "version": "0.14.3",
           "dependencies": {
