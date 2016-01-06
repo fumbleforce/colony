@@ -46,4 +46,4 @@ ContentBox = React.createClass({
       {this.props.style == "icons" ? this.renderIconLayout() : this.renderListLayout() }
     </div>;
   }
-sho
+ })
