@@ -8,7 +8,7 @@ Hex = function (q, r, s) {
 };
 
 Hex.ToKey = function (hex) {
-  return hex.q + "-" + hex.r + "-" + hex.s;
+  return hex.q + "|" + hex.r + "|" + hex.s;
 };
 
 Hex.Add = function (a, b) {

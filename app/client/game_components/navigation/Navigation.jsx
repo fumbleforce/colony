@@ -44,11 +44,15 @@ Navigation = React.createClass({
             Settlement
         </Item>
         <Item type="link" active={this.isActive("/market")} href="/market">
-            <i className="icon rpg rpg-Icons8_74"></i>
+            <i className="icon">
+              <Icon icon="scales" size="small" />
+            </i>
             Market
         </Item>
         <Item type="link" active={this.isActive("/barracks")} href="/barracks">
-            <i className="icon rpg rpg-Icon3_32"></i>
+            <i className="icon">
+              <Icon icon="crossed-pistols" size="small" />
+            </i>
             Barracks
         </Item>
         <Item type="link" active={this.isActive("/gathering")} href="/gathering">

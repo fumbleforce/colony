@@ -1,5 +1,5 @@
 Button = React.createClass({
-  mixins: [Mixins.classGenerator],
+  mixins: [Mixins.classGenerator, Mixins.stateSelector, Mixins.colorSelector],
   
   render() {
     let {
@@ -7,9 +7,17 @@ Button = React.createClass({
       ...others
     } = this.props;
     
-    return <button {...others} className={this.getClasses("ui", "button")}>
+    return <Unit
+      type="div"
+      {...others}
+      disabled={this.getDisabled()}
+      active={this.getActive()}
+      loading={this.getLoading()}
+      color={this.getColor()}
+      className={this.getClasses("ui", "button")}>
+      
       {this.props.children}
-    </button>;
+    </Unit>;
   }
 });
 

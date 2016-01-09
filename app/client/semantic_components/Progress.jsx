@@ -35,6 +35,9 @@ Progress = React.createClass({
     if (prevProps.value !== props.value || prevProps.total !== props.total) {
       $(this.refs.progress).progress({ total: props.total, value: props.value });
     }
+    if (props.percent !== prevProps.percent) {
+      $(this.refs.progress).progress({ percent: props.percent });
+    }
   },
   
   tick () {
