@@ -1,5 +1,7 @@
 
 seed = function () {
+  if (User.find({ username: "default" }).count()) return;
+  
   createNeighbour("def@asd.asd", "default", "Defaulttown", "Defaultmayor");
   createNeighbour("a@asd.asd", "mantheman", "Mantown", "Mayorman");
   createNeighbour("x@asd.asd", "dude", "Dudetown", "Mayor dude1");

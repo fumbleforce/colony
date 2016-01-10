@@ -18,8 +18,6 @@ PlotDetails = React.createClass({
       plot
     } = this.props;
     
-    console.log(plot);
-    
     return <Segment>
       <h2 className="ui header">
         {U.labelify(plot.terrain.key)}

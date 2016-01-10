@@ -1,21 +1,23 @@
 Meteor.methods({
-  "plots/assign" (holder) {
-    check(holder, String);
+  "plots/assign" (data) {
+    check(data, {
+      key: String,
+      holderKey: String
+    });
+    
+    let {
+      key,
+      holderKey
+    } = data;
     
     let settlement = Settlement.get();
-    let plots = settlement.plots;
     
-    if (!(holder in plots.breakdown)) {
-      throw new Meteor.Error("Invalid plotholder", `${holder} is not a valid plotholder, must be in ${_.keys(plots.breakdown)}`);
+    if (!(holderKey in Gamedata.plots.holders)) {
+      throw new Meteor.Error("Invalid plotholder", `${holderKey} is not a valid plotholder, must be in ${_.keys(plots.breakdown)}`);
     }
     
-    let assignedCount = U.sumObj(plots.breakdown);
-
-    if (assignedCount + 1 > plots.total) {
-      throw new Meteor.Error("No free plots", "There are no more free plots");
-    }
-    
-    settlement.inc(`plots.breakdown.${holder}`, 1);
+    settlement.set(`map.map.${key}.holder`, holderKey);
+    settlement.set(`map.map.${key}.icon`, Gamedata.plots.holders[holderKey].icon);
     settlement.save();
   },
   

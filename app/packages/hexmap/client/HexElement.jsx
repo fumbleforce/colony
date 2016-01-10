@@ -10,6 +10,21 @@ HexElement = React.createClass({
     };
   },
   
+  componentDidUpdate () {
+    console.log(this.props.hex.key, "UPDATED", this.props.hex);
+  },
+  
+  shouldComponentUpdate (newProps, newState) {
+    let props = this.props;
+    
+    let should =
+      !_.isEqual(newProps.hex, props.hex) ||
+      !_.isEqual(newProps.showCoords, props.showCoords) ||
+      !_.isEqual(newProps.radius, props.radius);
+    
+    return should;
+  },
+  
   getPoints () {
     const {
       hex,
@@ -77,7 +92,7 @@ HexElement = React.createClass({
       hex,
       layout,
       radius,
-      config,
+      showCoords,
       borderColor,
       selected,
       ...other
@@ -90,7 +105,7 @@ HexElement = React.createClass({
     let icon = "/icons/" + hex.icon;
     
     return (
-      <g>
+      <g className="hex">
         <defs>
           <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="4" height="4">
             <path d="M-1,1 l2,-2
@@ -100,15 +115,17 @@ HexElement = React.createClass({
         </defs>
         
         <polygon
+          className="hex-bg"
           style={{
             stroke: selected ? "#FF0000" : borderColor,
             strokeWidth: selected ? "5px" : "1px",
             strokeLinejoin: "round",
-            fill: hex.color,
+            fill: `url(#${hex.terrain.pattern}) ${hex.color}`,
           }}
           points={this.getPoints()} />
+          
         
-        {config.showCoords ? this.renderCoords() : <g></g>}
+        {showCoords ? this.renderCoords() : <g></g>}
         
         {icon ? 
           <use xlinkHref={icon} x={iconX} y={iconY} width={radius} height={radius} />: <g />
@@ -122,6 +139,10 @@ HexElement = React.createClass({
             }}
             points={this.getPoints()} /> : <g></g>
         }
+        
+        <polygon
+          className="hex-highlight"
+          points={this.getPoints()} />
         
         <polygon
           onClick={this.handleClick}

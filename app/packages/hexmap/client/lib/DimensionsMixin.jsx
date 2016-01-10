@@ -13,6 +13,7 @@ DimensionsMixin = {
     if (!container) {
       throw new Error('Cannot find container div');
     }
+    
     this.setState({
       containerWidth: getWidth(container),
       containerHeight: getHeight(container)
@@ -22,8 +23,8 @@ DimensionsMixin = {
   onResize () {
     if (this.rqf) return;
     this.rqf = window.requestAnimationFrame(() => {
-      this.rqf = null
-      this.updateDimensions()
+      this.rqf = null;
+      this.updateDimensions();
     });
   },
 

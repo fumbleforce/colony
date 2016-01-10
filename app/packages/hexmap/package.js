@@ -12,7 +12,7 @@ Package.onUse(function (api) {
   
   api.addFiles("client/lib/DimensionsMixin.jsx", "client");
   
-  api.addFiles("client/hexmath.js", "client");
+  api.addFiles("client/hexmath.js");
   api.addFiles("client/HexElement.jsx", "client");
   api.addFiles("client/Hexmap.jsx", "client");
   

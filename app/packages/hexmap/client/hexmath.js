@@ -204,3 +204,64 @@ Layout.polygonCorners = function (layout, h) {
   }
   return corners;
 };
+
+
+Generate = {};
+
+Generate.hexagon = function (radius) {
+  var mapDict = {
+    radius,
+    map: {}
+  };
+  
+  _.each(_.range(-radius, radius + 1), (q) => {
+    var r1 = Math.max(-radius, -q - radius);
+    var r2 = Math.min(radius, -q + radius);
+    
+    _.each(_.range(r1, r2 + 1), (r) => {
+      var s = -q-r;
+      var h = Hex(q, r, s);
+      h.key = Hex.ToKey(h);
+      
+      var isBorder = r === r1 || r === r2 || q === -radius || q === radius;
+      if (isBorder) {
+        h.isBorder = true;
+      }
+      
+      mapDict.map[h.key] = h;
+    });
+  });
+    
+  return mapDict;
+};
+
+Generate.hexagonExpandBorder = function (mapDict) {
+  var radius = mapDict.radius + 1;
+  
+  _.each(_.range(-radius, radius + 1), (q) => {
+    var r1 = Math.max(-radius, -q - radius);
+    var r2 = Math.min(radius, -q + radius);
+    
+    _.each(_.range(r1, r2 + 1), (r) => {
+      var isBorder = r === r1 || r === r2 || q === -radius || q === radius;
+      var s = -q-r;
+      
+      if (isBorder) {
+        var h = Hex(q, r, s);
+        h.key = Hex.ToKey(h);
+        h.isBorder = true;
+        mapDict.map[h.key] = h;
+      } else {
+        var key = Hex.ToKey(Hex(q, r, s));
+        mapDict.map[key].isBorder = false;
+      }
+    });
+  });
+  
+  mapDict.radius = radius;
+  
+  return mapDict;
+};
+
+
+Hex.generate = Generate;

@@ -20,11 +20,19 @@ Settlement = Astro.Class({
       default: 10
     },
     
+    map: {
+      type: "object",
+      default: () => {
+        return {};
+      }
+    },
+    
     plots: {
       type: "object",
       default: () => {
         return {
           total: Gamedata.plots.startCount,
+          mapDict: {},
           breakdown: {
             trade: 0,
             militia: 0,
@@ -148,7 +156,10 @@ Settlement = Astro.Class({
   },
   
   events: {
-    
+    afterInsert () {
+      this.generateMap();
+      this.save();
+    }
   },
   
   methods: {
@@ -199,6 +210,58 @@ Settlement = Astro.Class({
         finished: moment().add(sec || 30, "s").toDate(),
         produced: {}
       });
+    },
+    
+    getPlotBreakdown () {
+      let map = this.map.map;
+      let breakdown = {}
+      _.each(Gamedata.plots.holders, (h, key) => {
+        breakdown[key] = 0;
+      });
+      
+      _.each(map, p => {
+        breakdown[p.holder] += 1;
+      });
+      
+      return breakdown;
+    },
+    
+    generateMap () {
+      const radius = Gamedata.plots.startRadius; 
+      const environment = Gamedata.environments[this.environment];
+      const terrains = U.arrayify(Gamedata.terrains);
+      const distribution = environment.terrainDistribution;
+      const randomTerrain = () => Gamedata.terrains[U.weightedRandom(distribution)];
+      
+      let mapDict = Hex.generate.hexagon(radius);
+      
+      _.each(mapDict.map, h => {
+        h.terrain = randomTerrain();
+        h.color = h.terrain.color;
+        h.holder = "unused";
+      });
+      
+      this.set("map", mapDict);
+    },
+    
+    expandMap () {
+      let mapDict = this.map;
+      mapDict = Hex.generate.hexagonExpandBorder(mapDict);
+
+      const environment = Gamedata.environments[this.environment];
+      const terrains = U.arrayify(Gamedata.terrains);
+      const distribution = environment.terrainDistribution;
+      const randomTerrain = () => Gamedata.terrains[U.weightedRandom(distribution)];
+      
+      _.each(mapDict.map, h => {
+        if (h.isBorder) {
+          h.terrain = randomTerrain();
+          h.color = h.terrain.color;
+          h.holder = "unused";
+        }
+      });
+      
+      this.set({ map: mapDict });
     }
   },
   

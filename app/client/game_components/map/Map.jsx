@@ -10,67 +10,34 @@ MapPage = React.createClass({
   
   getMeteorData () {
     let settlement = Settlement.get();
+    let mapDict = settlement.map;
+    let map = U.valueList(mapDict.map);
     
     return {
-      settlement
+      settlement,
+      map,
+      mapDict,
     };
   },
   
   getInitialState () {
-    let radius = 4; 
-    let mapDict = {};
-    
-    const terrains = U.arrayify(Gamedata.plots.terrains);
-    const numTerrains = terrains.length;
-    
-    const distribution = [
-      [0, 10],
-      [1, 50],
-      [2, 20],
-      [3, 10],
-      [4, 30],
-      [5, 10],
-    ];
-    
-    const randomTerrain = () => terrains[U.weightedRandom(distribution)];
-    
-    _.each(_.range(-radius, radius + 1), (q) => {
-      let r1 = Math.max(-radius, -q - radius);
-      let r2 = Math.min(radius, -q + radius);
-      
-      _.each(_.range(r1, r2 + 1), (r) => {
-        var s = -q-r;
-        var h = Hex(q, r, s);
-        h.key = Hex.ToKey(h);
-        h.terrain = randomTerrain();
-        
-        const isBorder = r === r1 || r === r2 || q === -radius || q === radius;
-        if (isBorder) {
-          h.isBorder = true;
-        }
-        
-        h.color = h.terrain.color;
-        
-        h.holder = "unused";
-        mapDict[h.key] = h;
-      });
-    });
-    
-    let map = U.valueList(mapDict);
-    
     return {
-      map,
-      radius,
-      mapDict,
       scale: 1,
       assigning: false,
       selectedPlot: false,
-      showCoords: false,
+      hexmapConfig: {
+        showCoords: false,
+        orientation: "pointy",
+      }
     };
   },
   
   assignPlot (holder) {
-    this.setState({ assigning: holder });
+    if (this.state.assigning === holder) {
+      this.setState({ assigning: false });
+    } else {
+      this.setState({ assigning: holder });
+    }
     //Meteor.call("plots/assign", holder);
   },
   
@@ -82,30 +49,27 @@ MapPage = React.createClass({
     this.setState({ scale: value });
   },
   
+  expandMap () {
+    Meteor.call("map/expand", (err, res) => {
+      
+    });
+  },
+  
   handleMapClick (hex, e) {
-    console.log("Clicked map", hex);
-    /*
-    console.log("holders", holders);
-    const currentIndex = holders.findIndex((e) => e.key === hex.holder);
-    console.log("current index", currentIndex);
-    const nextIndex = currentIndex === holders.length - 1 ? 0 : currentIndex + 1;
-    */
     let mapDict = this.state.mapDict;
     const assigning = this.state.assigning;
     const hexKey = Hex.ToKey(hex);
     this.setState({ selectedPlot: hexKey });
     
     if (assigning) {
-      const holders = Gamedata.plots.holders;
-      const newHolder = _.find(holders, (h) => h.key === this.state.assigning);
       
-      // mapDict[hexKey].color = newHolder.color;
-      mapDict[hexKey].icon = newHolder.icon;
-      mapDict[hexKey].holder = newHolder.key;
-      this.setState({ mapDict });
+      Meteor.call("plots/assign", {
+        key: hexKey,
+        holderKey: this.state.assigning
+      }, (err, res) => {
+
+      });
     }
-    
-    
   },
   
   isAssignActive (key) {
@@ -113,20 +77,33 @@ MapPage = React.createClass({
   },
   
   toggleCoords (e) {
-    console.log(e);
-    this.setState({ showCoords: !this.state.showCoords });
+    let hexmapConfig = this.state.hexmapConfig;
+    hexmapConfig.showCoords = !hexmapConfig.showCoords;
+    this.setState({ hexmapConfig });
   },
   
   render () {
-    let settlement = this.data.settlement;
+    let {
+      selectedPlot,
+      hexmapConfig,
+      scale
+    } = this.state;
+    
+    let {
+      map,
+      mapDict,
+      settlement
+    } = this.data;
+    
     let plots = settlement.plots;
-    let breakdown = plots.breakdown;
+    let breakdown = settlement.getPlotBreakdown();
     let total = plots.total;
     let used = value = U.sumObj(breakdown);
     let unUsed = total - used;
     let percentUsed = Math.floor(100 * used / total);
+    let radius = mapDict.radius;
 
-    let colors = {
+    const colors = {
       trade: "yellow",
       militia: "green",
       crafting: "teal",
@@ -134,34 +111,19 @@ MapPage = React.createClass({
       settlements: "red"
     };
     
-    const hexmapConfig = {
-      showCoords: this.state.showCoords,
-      orientation: "pointy",
-    };
-    
-    let {
-      mapDict,
-      radius,
-      scale,
-      map,
-      selectedPlot
-    } = this.state;
-    
     if (selectedPlot) {
-      selectedPlot = mapDict[selectedPlot];
+      selectedPlot = mapDict.map[selectedPlot];
     }
     
     return (
       <div>
-        
-        <Grid className="two column">
+        <Grid className="two column stackable">
           <Column>
             {selectedPlot ? <PlotDetails plot={selectedPlot} /> : ""}
             
             
             <Grid className="internally celled two column">
               {U.arrayify(breakdown).map((holder) => {
-                console.log(holder);
                 return <Row key={holder.key}>
                   <Column>
                     <h3>
@@ -180,16 +142,81 @@ MapPage = React.createClass({
               })}
             </Grid>
             
-            
+            <Menu className="horizontal three item fluid labeled icon menu">
+              <Item type="link" onClick={this.expandMap}>
+                  <i className="icon">
+                    <Icon icon="sawed-off-shotgun" size="small" />
+                  </i>
+                  Conquer a plot
+              </Item>
+              <Item type="link" onClick={this.expandMap}>
+                  <i className="icon">
+                    <Icon icon="shaking-hands" size="small" />
+                  </i>
+                  Negotiate transfer of a plot
+              </Item>
+              <Item type="link" onClick={this.expandMap}>
+                  <i className="icon">
+                    <Icon icon="swap-bag" size="small" />
+                  </i>
+                  Purchase a plot
+              </Item>
+              
+            </Menu>
           </Column>
-          <Column className="ui inverted brown segment">
+          <Column className="ui inverted brown segment noselect">
             <Hexmap
               height={600}
               radius={radius}
               scale={scale}
               config={hexmapConfig}
+              draggable={true}
               onClick={this.handleMapClick}
-              hexes={map} />
+              hexes={map}>
+              
+              <defs>
+                <pattern id="mountains" width="15" height="15" patternUnits="userSpaceOnUse" x="0" y="0">
+                  <rect width="15" height="15" fill="#4f638d"/>
+                  <path d="M0 15L7.5 0L15 15Z" fill="#303355"/>
+                </pattern>
+                
+                <pattern id="tundra" width="20" height="9">
+                  <rect width="20" height="9" fill="#f2f2f2"/>
+                  <rect width="20" height="2" fill="#e7e7e7"/>
+                  <rect y="2" width="20" height="3" fill="#ececec"/>
+                </pattern>
+                
+                <pattern id="forest" width="40" height="40" viewBox="0 0 20 20">
+                  <rect width="40" height="40" fill="#8a3"/>
+                  <circle r="9.2" strokeWidth="1" stroke="#613" fill="none"/>
+                  <circle cy="18.4" r="9.2" strokeWidth="1px" stroke="#613" fill="none"/>
+                  <circle cx="18.4" cy="18.4" r="9.2" strokeWidth="1" stroke="#613" fill="none"/>
+                </pattern>
+                
+                <pattern id="grasslands" width="70" height="70">
+                  <rect width="70" height="70" fill="#bbd817"/>
+                  <g transform="rotate(45)">
+                  <rect width="99" height="25" fill="#a9ce00"/>
+                  <rect y="-50" width="99" height="25" fill="#a9ce00"/>
+                  </g>
+                </pattern>
+                
+                <patterns id="hills" width='60' height='30'>
+                  <defs>
+                    <rect id='r' width='30' height='15' fill='#bb085f' strokeWidth='2.5' stroke='#7a054d'/>
+                    <g id='p'>
+                    <use xlinkHref='#r'/>
+                    <use y='15' xlinkHref='#r'/>
+                    <use y='30' xlinkHref='#r'/>
+                    <use y='45' xlinkHref='#r'/>
+                    </g>
+                  </defs>
+                  <use xlinkHref='#p' transform='translate(0 -25) skewY(40)'/>
+                  <use xlinkHref='#p' transform='translate(30 0) skewY(-40)'/>
+                </patterns>
+              </defs>
+              
+            </Hexmap>
     
             <Slider
               label="Scale"
@@ -246,27 +273,7 @@ MapPage = React.createClass({
           })}
         </Grid>
         
-        <Menu className="horizontal three item fluid labeled icon menu">
-          <Item type="link" >
-              <i className="icon">
-                <Icon icon="sawed-off-shotgun" size="small" />
-              </i>
-              Conquer a plot
-          </Item>
-          <Item type="link" >
-              <i className="icon">
-                <Icon icon="shaking-hands" size="small" />
-              </i>
-              Negotiate transfer of a plot
-          </Item>
-          <Item type="link" >
-              <i className="icon">
-                <Icon icon="swap-bag" size="small" />
-              </i>
-              Purchase a plot
-          </Item>
-          
-        </Menu>
+        
       </div>
     );
   }
