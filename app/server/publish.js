@@ -49,6 +49,14 @@ Meteor.publish("letters", function () {
     ]
 });
 
+Meteor.publish("transactions", function () {
+    let userId = this.userId;
+
+    return [
+        Transaction.find({ userId }),
+    ];
+});
+
 // Publish the current user's record to the client.
 Meteor.publish(null, function() {
  if (this.userId) {

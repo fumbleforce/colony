@@ -271,7 +271,13 @@ Settlement = Astro.Class({
 });
 
 
-Settlement.get = function () {
+Settlement.get = function (userId) {
+  if (userId) {
+    return Settlement.findOne({
+      userId
+    });
+  }
+  
   return Settlement.findOne({
     userId: Meteor.userId()
   });

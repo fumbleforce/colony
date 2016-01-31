@@ -1,12 +1,6 @@
-_ = lodash;
-
 
 MapPage = React.createClass({
   mixins: [ReactMeteorData],
-  
-  propTypes: {
-
-  },
   
   getMeteorData () {
     let settlement = Settlement.get();

@@ -16,19 +16,11 @@ Chart = React.createClass({
       throw new Error('Config must be specified for the ' + chartType + ' component');
     }
     
-    console.log("before", HighchartConfigs.get(chartType));
     let normalConfigs = HighchartConfigs.get(chartType);
     let extendedConfig = _.deepExtend(normalConfigs, config);
-    console.log("extended", extendedConfig);
     
     let chartConfig = extendedConfig.chart;
-    console.log({
-      ...extendedConfig,
-      chart: {
-        ...chartConfig,
-        renderTo: this.refs.chart
-      }
-    });
+
     this.chart = new Highcharts.Chart({
       ...extendedConfig,
       chart: {

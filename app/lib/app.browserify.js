@@ -1,6 +1,8 @@
 
 var underscoreDeepExtend = require("underscore-deep-extend");
 _.mixin({deepExtend: underscoreDeepExtend(_)});
+console.log("ADDED DEEP EXTEND");
+
 Semantic = require("react-semantify");
 
 classNames = require('classnames');

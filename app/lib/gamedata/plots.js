@@ -6,6 +6,7 @@ Gamedata.plots = {
         name: "Unused",
         color: "#FFFFFF",
         icon: false
+        
       },
       militia: {
         name: "Militia",

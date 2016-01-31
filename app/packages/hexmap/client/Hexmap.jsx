@@ -27,7 +27,7 @@ Hexmap = React.createClass({
     e.preventDefault();
     
     this.setState({
-      localScale: U.clamp(this.state.localScale - e.deltaY / 300, 0.1, 5)
+      localScale: U.clamp(this.state.localScale - e.deltaY / 500, 0.1, 5)
     });
   },
   
@@ -96,7 +96,7 @@ Hexmap = React.createClass({
     return hexSize;
   },
   
-  getLayout () {
+  getLayout (hexSize) {
     let {
       config,
       ...other
@@ -119,7 +119,9 @@ Hexmap = React.createClass({
     
     let origin = Point(containerWidth / 2, containerHeight / 2);
     
-    let hexSize = this.getHexSize();
+    if (!hexSize) {
+      hexSize = this.getHexSize();
+    }
     
     return Layout(orientationLayout, hexSize, origin);
   },
@@ -145,14 +147,15 @@ Hexmap = React.createClass({
     return `matrix(${ts},${0}, ${0}, ${ts}, ${fl(cx-ts*cx)}, ${fl(cy-ts*cy)})`;
   },
   
-  componentDidUpdate (prevProps, prevState) {
+  componentWillUpdate (prevProps, prevState) {
     let heightChanged = prevState.containerHeight !== this.state.containerHeight;
     let widthChanged = prevState.containerWidth !== this.state.containerWidth;
     let scaleChanged = prevState.localScale !== this.state.localScale;
     
+    /*
     if (heightChanged || widthChanged) {
-      let layout = this.getLayout();
       let hexSize = this.getHexSize();
+      let layout = this.getLayout(hexSize);
       let scaleMatrix = this.getScaleMatrix();
       
       this.setState({
@@ -167,10 +170,10 @@ Hexmap = React.createClass({
         scaleMatrix,
       });
     }
+    */
   },
   
   render () {
-    console.log("Hexmap rendering");
     let {
       width,
       height,
@@ -181,16 +184,23 @@ Hexmap = React.createClass({
       ...other,
     } = this.props;
     
+    let hexSize = this.getHexSize();
+    let layout = this.getLayout(hexSize);
+    let scaleMatrix = this.getScaleMatrix();
+    let calculationsComplete = layout && hexSize && scaleMatrix;
+    
     let {
       containerHeight,
       containerWidth,
       dragOffsetX,
       dragOffsetY,
       selected,
+      /*
       layout,
       hexSize,
       scaleMatrix,
       calculationsComplete
+      */
     } = this.state;
     
     const containerStyle = {
@@ -228,7 +238,8 @@ Hexmap = React.createClass({
           onMouseMove={this.handleDrag}
           onWheel={this.handleWheel}>
           
-          {this.props.children}
+          {this.props.children
+          }
           
           <g
             id="hexes"
